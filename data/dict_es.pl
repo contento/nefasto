@@ -1,6 +1,8 @@
 % Spanish Dictionary and Lexicon
 :- encoding(utf8).
 
+:- multifile word_bank/3.
+
 % Word bank for random selection
 word_bank(nouns, es, [
     mago, caballero, comerciante, viajero, sabio, niño, anciano,

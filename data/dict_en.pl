@@ -1,6 +1,8 @@
 % English Dictionary and Lexicon
 :- encoding(utf8).
 
+:- multifile word_bank/3.
+
 % Word bank for random selection
 word_bank(nouns, en, [
     wizard, knight, merchant, traveler, sage, child, elder,
