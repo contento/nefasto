@@ -1,6 +1,6 @@
 # Prolog Discourse Generator: Reviving Nefasto
 
-**English** | **[Español](README.es.md)** 🇪🇸
+**English** | **[Español](README.es.md)** 🇨🇴
 
 A pure Prolog narrative generator reviving the original **Nefasto discourse generator**—a real project built at [Universidad de Antioquia](https://www.udea.edu.co/) (Medellín) in the late 1980s using Turbo Prolog.
 
