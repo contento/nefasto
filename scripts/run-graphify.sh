@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run graphify with environment variables from .env
+# Run graphify with configuration from .env and graphify.toml
 # Usage: ./scripts/run-graphify.sh [input-file]
 
 set -e
@@ -7,19 +7,30 @@ set -e
 # Script directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+CONFIG_FILE="$SCRIPT_DIR/graphify.toml"
 
-# Load environment variables from .env
+# Load environment variables from .env (secrets only)
 if [ -f "$PROJECT_ROOT/.env" ]; then
     export $(cat "$PROJECT_ROOT/.env" | grep -v '^#' | grep -v '^$' | xargs)
-    echo "✓ Loaded configuration from .env"
+    echo "✓ Loaded secrets from .env"
 else
     echo "❌ Error: .env file not found"
     echo ""
-    echo "Please create .env file with required configuration:"
+    echo "Please create .env file with required API key:"
     echo "  cp .env.example .env"
-    echo "  # Edit .env and add your API keys"
+    echo "  # Edit .env and add your OpenRouter API key"
     exit 1
 fi
+
+# Load configuration from TOML
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "❌ Error: graphify.toml not found at $CONFIG_FILE"
+    echo ""
+    echo "Please copy the example config:"
+    echo "  cp $SCRIPT_DIR/graphify.toml.example $SCRIPT_DIR/graphify.toml"
+    exit 1
+fi
+echo "✓ Loaded configuration from graphify.toml"
 
 # Validate required variables
 if [ -z "$OPENROUTER_API_KEY" ]; then

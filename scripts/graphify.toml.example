@@ -1,0 +1,53 @@
+# Graphify Configuration
+# Copy this file to graphify.toml and customize as needed
+# This file is NOT ignored by git (unlike .env which contains secrets)
+
+[input]
+# Input source (file path, URL, or directory)
+source = "README.md"
+
+# Input type (auto, code, markdown, text)
+type = "auto"
+
+[output]
+# Output directory for knowledge graph
+directory = "graphify-out"
+
+# Graph format (json, yaml, xml)
+format = "json"
+
+[model]
+# Model to use (free tier options from OpenRouter)
+# - mistralai/mistral-7b-instruct:free        (Recommended - Fast, good quality)
+# - meta-llama/llama-2-7b-chat:free           (Meta's Llama 2)
+# - gryphe/mythomist-7b:free                  (Specialized)
+# - openchat/openchat-7b:free                 (Fast inference)
+name = "mistralai/mistral-7b-instruct:free"
+
+[generation]
+# Temperature for generation (0.0-1.0)
+# Lower = more deterministic, Higher = more creative
+temperature = 0.7
+
+# Max tokens for response (increase for longer outputs)
+max_tokens = 2000
+
+# Top-p sampling (nucleus sampling, 0.0-1.0)
+top_p = 0.95
+
+[logging]
+# Verbose logging (true/false)
+verbose = false
+
+# Debug mode (true/false)
+debug = false
+
+[narrative]
+# Language for Prolog narrative generation (en/es)
+language = "en"
+
+# Random seed for reproducibility (optional, comment out for random)
+seed = 42
+
+# Narrative type (simple_story, dialogue, description)
+type = "simple_story"

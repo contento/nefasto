@@ -8,30 +8,34 @@ Generate a knowledge graph from project files using Claude AI.
 
 ### Setup
 
-1. **Get free OpenRouter API key:**
-   - Visit https://openrouter.ai
-   - Sign up (free - no credit card required)
-   - Get your API key from https://openrouter.ai/keys
-   - Free tier: 5M tokens/month
+#### 1. Get free OpenRouter API key
+- Visit https://openrouter.ai
+- Sign up (free - no credit card required)
+- Get your API key from https://openrouter.ai/keys
+- Free tier: 5M tokens/month
 
-2. **Copy environment template:**
-   ```bash
-   cp .env.example .env
-   ```
+#### 2. Setup secrets (.env)
+```bash
+cp .env.example .env
+# Edit .env and add your OpenRouter key:
+#   OPENROUTER_API_KEY=sk-or-v1-YOUR_API_KEY_HERE
+```
 
-3. **Edit `.env` and add your OpenRouter key:**
-   ```bash
-   # .env
-   OPENROUTER_API_KEY=sk-or-v1-YOUR_API_KEY_HERE
-   GRAPHIFY_MODEL=mistralai/mistral-7b-instruct:free
-   GRAPHIFY_INPUT=README.md
-   GRAPHIFY_OUTPUT=graphify-out
-   ```
+#### 3. Setup configuration (graphify.toml)
+```bash
+cp scripts/graphify.toml.example scripts/graphify.toml
+# Edit scripts/graphify.toml to customize:
+#   - input source (file/directory)
+#   - output format (json, yaml)
+#   - model selection
+#   - temperature, max tokens
+#   - verbose/debug mode
+```
 
-4. **Make script executable (Linux/macOS):**
-   ```bash
-   chmod +x scripts/run-graphify.sh
-   ```
+#### 4. Make script executable (Linux/macOS)
+```bash
+chmod +x scripts/run-graphify.sh
+```
 
 ### Usage
 
