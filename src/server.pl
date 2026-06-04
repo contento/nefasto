@@ -8,7 +8,7 @@
 :- use_module(library(http/http_files)).
 
 % Load all core modules
-:- consult('src/main.pl').
+:- consult('main.pl').
 
 % ===== CORS CONFIGURATION =====
 :- set_setting(http:cors, [
