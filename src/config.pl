@@ -49,9 +49,19 @@ asserta_config([Key-Value | Rest]) :-
 % --- JSON PARSER (simplified) ---
 % For production, use library(http/json) or library(json)
 parse_json(JsonStr, Config) :-
-    % Simplified: just extract key-value pairs
-    % Real implementation would use proper JSON library
-    Config = [language-en, seed-42, pacing-medium].
+    % Extract key: "value" pairs from JSON (basic implementation)
+    extract_json_pairs(JsonStr, Config).
+
+extract_json_pairs(JsonStr, Pairs) :-
+    split_string(JsonStr, ",", "\n\t{} ", Items),
+    maplist(extract_json_pair, Items, FilteredPairs),
+    exclude(==(empty), FilteredPairs, Pairs).
+
+extract_json_pair(Item, Key-Value) :-
+    split_string(Item, ":", " \"", [KeyStr, ValueStr]),
+    atom_string(Key, KeyStr),
+    atom_string(Value, ValueStr), !.
+extract_json_pair(_, empty).
 
 % --- YAML PARSER (simplified) ---
 parse_yaml(YamlStr, Config) :-

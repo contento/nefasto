@@ -8,15 +8,15 @@ current_language(en).
 current_seed(42).
 
 % Load all modules
-:- consult('tui.pl').
-:- consult('generator.pl').
-:- consult('ontology.pl').
-:- consult('config.pl').
-:- consult('random_utils.pl').
-:- consult('state.pl').
-:- consult('../data/dict_en.pl').
-:- consult('../data/dict_es.pl').
-:- consult('../data/narratives.pl').
+:- consult('src/tui.pl').
+:- consult('src/generator.pl').
+:- consult('src/ontology.pl').
+:- consult('src/config.pl').
+:- consult('src/random_utils.pl').
+:- consult('src/state.pl').
+:- consult('data/dict_en.pl').
+:- consult('data/dict_es.pl').
+:- consult('data/narratives.pl').
 
 main :-
     cli_args(Args),

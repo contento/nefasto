@@ -8,13 +8,13 @@
 :- use_module(library(http/http_files)).
 
 % Load all core modules
-:- consult('main.pl').
+:- consult('src/main.pl').
 
 % ===== CORS CONFIGURATION =====
 :- set_setting(http:cors, [
-    (methods([get, post, options])),
-    (origins(['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', '*'])),
-    (credentials(true))
+    methods([get, post, options]),
+    origins(['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'http://127.0.0.1:3001']),
+    credentials(false)
 ]).
 
 % ===== ROUTE HANDLERS =====
@@ -143,10 +143,10 @@ handle_error(Error) :-
 % ===== SERVER START =====
 
 % Default port
-server_port(3000).
+server_port(3001).
 
 start_server :-
-    start_server(3000).
+    start_server(3001).
 
 start_server(Port) :-
     format('Starting Prolog Discourse Generator Server~n'),

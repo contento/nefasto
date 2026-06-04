@@ -12,7 +12,7 @@ init_narrative_state :-
     retractall(entity_history(_, _, _)),
     retractall(last_action(_)),
     retractall(last_location(_)),
-    assertz(narrative_state(started)).
+    assertz(narrative_state(0)).
 
 % Track what entities have been mentioned
 add_entity(Type, Entity, LineNum) :-

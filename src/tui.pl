@@ -184,7 +184,8 @@ format_menu_options([(Key, Action, Label) | Rest]) :-
 
 read_choice(Choice) :-
     write('Enter choice: '),
-    read(Choice).
+    read_line_to_string(user_input, Line),
+    atom_string(Choice, Line).
 
 write_colored(Color, Text) :-
     get_color_code(Color, Code),

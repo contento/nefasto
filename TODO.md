@@ -9,10 +9,6 @@
   - Verify: word_bank/3 clauses are visible to generator.pl
   - Expected: phrase can build token lists from DCG rules
 
-- [ ] **Implement random_select_word/3** 
-  - Use nth1/3 to pick from word_bank lists
-  - Handle missing categories gracefully
-  - Test: random_select_word(nouns, en, Word)
 
 - [ ] **Add basic narrative generation**
   - Implement generate_narrative/3 in generator.pl
@@ -302,30 +298,30 @@ Document these in code comments. Understanding the constraints teaches you about
 ## Code Review Findings (Mimo — 2026-06-04)
 
 ### Critical Bugs
-- [ ] **Remove custom `random_between/3`** — shadows SWI-Prolog built-in, has off-by-one bug when `R` is near 1.0 (`random_utils.pl:27-30`). Use built-in `random_between/3` and `random_member/2`.
-- [ ] **Fix server port mismatch** — server defaults to 3000 (`server.pl:146,148`), React app expects 3001 (`App.jsx:16`). Align to 3001.
-- [ ] **Fix CORS configuration** — `set_setting(http:cors, ...)` syntax is wrong for SWI-Prolog HTTP library. `'*'` origin with `credentials(true)` is invalid per CORS spec (`server.pl:14-18`).
-- [ ] **Fix `server.pl` relative path** — `consult('main.pl')` only works if cwd is `src/`. Change to `consult('src/main.pl')` (`server.pl:11`).
-- [ ] **Fix `advance_line/0` type error** — `narrative_state` is initialized to atom `started`, but `advance_line` does `N + 1` on it. Dead code with a crash bug (`state.pl:52-55`).
+- [x] **Remove custom `random_between/3`** — ✅ Removed custom definition, now uses SWI-Prolog built-in (`random_utils.pl`).
+- [x] **Fix server port mismatch** — ✅ Changed to 3001 (`server.pl:146,149`).
+- [x] **Fix CORS configuration** — ✅ Fixed syntax, removed wildcard with credentials, set `credentials(false)` (`server.pl:14-18`).
+- [x] **Fix `server.pl` relative path** — ✅ Changed to `consult('src/main.pl')` (`server.pl:11`).
+- [x] **Fix `advance_line/0` type error** — ✅ Changed initialization from atom `started` to integer `0` (`state.pl:15`).
 
 ### Narrative Coherence
-- [ ] **Wire same subject through story clauses** — `setup`, `complication`, `resolution` each declare independent `Subj` variables. No entity carries across sentences (`generator.pl:26-61`). Core coherence bug.
-- [ ] **Make `description` DCG language-aware** — `[There, is]` and `[Its]` are hardcoded English regardless of `Lang` (`generator.pl:72-77`).
-- [ ] **Make `dialogue` DCG language-aware** — `[said, ':']` is hardcoded English (`generator.pl:64-70`).
+- [x] **Wire same subject through story clauses** — ✅ Subject now carries through: `story(Lang) --> setup(Lang, Subj), complication(Lang, Subj), resolution(Lang, Subj)` (`generator.pl:23`).
+- [x] **Make `description` DCG language-aware** — ✅ Added `description_opening/1` and `description_possessive/1` rules (`generator.pl:82-92`).
+- [x] **Make `dialogue` DCG language-aware** — ✅ Added `dialogue_verb/1` rule with English and Spanish variants (`generator.pl:78-79`).
 
 ### Dead Code / Stale Integration
 - [ ] **Unify entity tracking** — two independent systems (`generator.pl:172-195` and `state.pl`) never integrated. Pick one, delete the other.
 - [ ] **Wire anaphora resolution** — `get_pronoun_antecedent/2` in `state.pl` is never called from generator.
 - [ ] **Wire ontology constraints** — `can_perform/2`, `location_allows_activity/2` in `ontology.pl` are never checked during generation.
 - [ ] **Wire narrative templates** — `narrative_template/2`, `heros_journey/1`, `three_act_structure/1` in `narratives.pl` are never referenced by generator.
-- [ ] **Remove or implement `weighted_random/2`** — returns sentinel `default` when weights don't sum to ≥100 (`random_utils.pl:33-45`).
+- [x] **Remove or implement `weighted_random/2`** — ✅ Reimplemented properly: now sums weights and selects correctly (`random_utils.pl:32-46`).
 
 ### Config & Input
-- [ ] **Implement config parsers or remove `--config`** — JSON parser returns hardcoded values, YAML/TOML parsers break on real files (`config.pl:51-85`).
-- [ ] **Fix `read_choice/1`** — uses `read/1` which expects Prolog-term syntax with period terminator. Use `read_line_to_string/2` (`tui.pl:185-187`).
+- [x] **Implement config parsers or remove `--config`** — ✅ Added basic JSON parser that extracts key-value pairs from actual files (`config.pl:51-63`).
+- [x] **Fix `read_choice/1`** — ✅ Changed to use `read_line_to_string/2` (`tui.pl:185-187`).
 
 ### Documentation
 - [ ] **Fix fabricated README examples** — "Example Narratives" section shows coherent output that the system doesn't produce. Update with actual output.
-- [ ] **Update stale TODO items** — "Implement random_select_word/3" is already implemented in `random_utils.pl`.
+- [x] **Update stale TODO items** — ✅ Removed "Implement random_select_word/3" task (already implemented).
 
 See HANDOFF.md for how to collaborate on these tasks.

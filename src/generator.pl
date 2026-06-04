@@ -19,62 +19,74 @@ generate_narrative(description, Lang, Narrative) :-
 
 % --- DCG RULES ---
 
-% Simple Story Structure: setup -> complication -> resolution
-story(Lang) --> setup(Lang), complication(Lang), resolution(Lang).
+% Simple Story Structure: setup -> complication -> resolution (with shared subject)
+story(Lang) --> setup(Lang, Subj), complication(Lang, Subj), resolution(Lang, Subj).
 
 % English setup
-setup(en) -->
+setup(en, Subj) -->
     [once], space, subject(en, Subj), space,
     copula(en), space, location(en, Loc), ['.'],
     { record_entity(subject, Subj),
       record_entity(location, Loc) }.
 
 % Spanish setup
-setup(es) -->
+setup(es, Subj) -->
     ['Érase'], space, subject(es, Subj), space,
     copula(es), space, location(es, Loc), ['.'],
     { record_entity(subject, Subj),
       record_entity(location, Loc) }.
 
 % English complication
-complication(en) -->
-    [then], space, subject(en, Subj), space,
+complication(en, Subj) -->
+    [then], space, [Subj], space,
     action(en, Action), space, object(en, Obj), ['.'],
     { record_entity(action, Action),
       record_entity(object, Obj) }.
 
 % Spanish complication
-complication(es) -->
-    [luego], space, subject(es, Subj), space,
+complication(es, Subj) -->
+    [luego], space, [Subj], space,
     action(es, Action), space, object(es, Obj), ['.'],
     { record_entity(action, Action),
       record_entity(object, Obj) }.
 
 % English resolution
-resolution(en) -->
-    [finally], space, subject(en, Subj), space,
+resolution(en, Subj) -->
+    [finally], space, [Subj], space,
     action(en, _), ['.'].
 
 % Spanish resolution
-resolution(es) -->
-    [finalmente], space, subject(es, Subj), space,
+resolution(es, Subj) -->
+    [finalmente], space, [Subj], space,
     action(es, _), ['.'].
 
 % Dialogue: speaker1 says something, speaker2 replies
 dialogue(Lang) -->
-    speaker(Lang, S1), [said, ':'], space,
+    speaker(Lang, S1), dialogue_verb(Lang), space,
     quote(Lang, Q1), nl, nl,
-    speaker(Lang, S2), [said, ':'], space,
+    speaker(Lang, S2), dialogue_verb(Lang), space,
     quote(Lang, Q2),
     { record_entity(speaker, S1),
       record_entity(speaker, S2) }.
 
 description(Lang) -->
-    [There, is], space, adjective(Lang, Adj), space,
+    description_opening(Lang), space, adjective(Lang, Adj), space,
     noun(Lang, Noun), ['.'], space,
-    [Its], space, adjective(Lang, Adj2), space,
+    description_possessive(Lang), space, adjective(Lang, Adj2), space,
     feature(Lang, Feature), ['.'],
     { record_entity(noun, Noun) }.
+
+% Dialogue verbs (language-aware)
+dialogue_verb(en) --> [said, ':'].
+dialogue_verb(es) --> [dijo, ':'].
+
+% Description openings (language-aware)
+description_opening(en) --> [There, is].
+description_opening(es) --> [Hay].
+
+% Description possessives (language-aware)
+description_possessive(en) --> [Its].
+description_possessive(es) --> [Su].
 
 % --- GRAMMAR ELEMENTS ---
 
