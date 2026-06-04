@@ -1,5 +1,7 @@
 # Prolog Discourse Generator
 
+**English** | **[Español](README.es.md)** 🇪🇸
+
 A pure Prolog narrative generator reviving 1989 Turbo Prolog techniques with modern SWI-Prolog. Generates coherent stories, dialogues, and descriptions in English and Spanish—no LLMs, no neural networks, just pure logic.
 
 ## Features
