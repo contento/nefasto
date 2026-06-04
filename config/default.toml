@@ -1,0 +1,33 @@
+# Prolog Discourse Generator Configuration
+
+[core]
+language = "en"
+seed = 42
+pacing = "medium"
+narrative_type = "simple_story"
+
+[generation]
+max_attempts = 100
+max_sentence_length = 20
+
+[features]
+enable_state_tracking = true
+enable_coherence_check = true
+
+[output]
+format = "text"
+verbose = false
+
+[languages]
+available = ["en", "es"]
+default = "en"
+
+[narratives]
+types = ["simple_story", "dialogue", "description"]
+default = "simple_story"
+
+[prolog]
+turbo_compat = false
+debug_dcg = false
+show_parse_tree = false
+unicode_support = true

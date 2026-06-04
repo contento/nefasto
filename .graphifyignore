@@ -1,0 +1,64 @@
+# Graphify ignore patterns - exclude from knowledge graph generation
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.beam
+
+# Dependencies
+.swi-prolog/
+swipl_modules/
+
+# Generated outputs
+*.pdf
+*.html
+*.png
+*.svg
+
+# Configuration (keep these readable in graph)
+# config/*.json - INCLUDE
+# config/*.yaml - INCLUDE
+# config/*.toml - INCLUDE
+
+# Documentation (should be in graph)
+# docs/ - INCLUDE
+# README.md - INCLUDE
+
+# Git
+.git/
+.gitignore
+
+# Environment
+.env
+.env.local
+
+# Cache
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files (if any)
+*.mp4
+*.mov
+*.avi
+
+# Test outputs
+test_results/
+coverage/
+
+# Temporary
+tmp/
+temp/
+*.tmp

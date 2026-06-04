@@ -1,0 +1,18 @@
+{
+  "language": "en",
+  "seed": 42,
+  "pacing": "medium",
+  "narrative_type": "simple_story",
+  "max_attempts": 100,
+  "max_sentence_length": 20,
+  "enable_state_tracking": true,
+  "enable_coherence_check": true,
+  "output_format": "text",
+  "verbose": false,
+  "available_languages": ["en", "es"],
+  "narrative_types": [
+    "simple_story",
+    "dialogue",
+    "description"
+  ]
+}

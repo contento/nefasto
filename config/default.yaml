@@ -1,0 +1,32 @@
+---
+language: en
+seed: 42
+pacing: medium
+narrative_type: simple_story
+
+# Generation parameters
+max_attempts: 100
+max_sentence_length: 20
+
+# Features
+enable_state_tracking: true
+enable_coherence_check: true
+
+# Output
+output_format: text
+verbose: false
+
+# Available options
+available_languages:
+  - en
+  - es
+
+narrative_types:
+  - simple_story
+  - dialogue
+  - description
+
+# Advanced settings
+turbo_prolog_compat: false
+debug_dcg: false
+show_parse_tree: false
