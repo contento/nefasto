@@ -716,6 +716,8 @@ This satire—hidden in seemingly earnest academic discourse—became a beloved 
 
 ### Original Implementation
 
+Prof. Rios recalls the code was remarkably simple—10 columns, each selecting a random element from a set of ~10 options:
+
 The code was remarkably simple (from Prof. Rios's recollection):
 
 ```prolog

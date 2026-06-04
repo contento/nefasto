@@ -10,6 +10,21 @@ In the late 1980s, Prof. Fabian Rios built a simple discourse generator using Tu
 
 Prof. Roberto Flores ran the program daily, printed the discourses, and posted them on the faculty bulletin board as a humorous response to the university's verbose professors: "so much discourse and so little action." It worked. The satire became a beloved tradition.
 
+### The Original Code
+
+Prof. Rios recalls the implementation was remarkably simple—10 columns, each picking a random element:
+
+```prolog
+% Goal to prove:
+P(A) :- p1(rnd(0, 10)),
+             p2(rnd(0, 10)),
+             p3(rnd(0, 10)),
+              ... (7 more columns) ...,
+              p10(rnd(0, 10))
+```
+
+Where `rnd` was Turbo Prolog's random function. "Unfortunately I don't keep the code. I only remember it was very simple... I don't remember how the concatenate operator or function was." Yet this simple random selection from constrained columns generated discourse coherent enough to fool busy faculty.
+
 **This project revives that spirit**: pure logic, simple rules, and coherent narratives generated without neural networks or statistical models. Just Prolog, just like 1989—but with the advantages of modern SWI-Prolog.
 
 ---
