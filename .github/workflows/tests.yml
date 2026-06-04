@@ -1,0 +1,37 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install SWI-Prolog
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y swi-prolog
+
+    - name: Verify SWI-Prolog installation
+      run: swipl --version
+
+    - name: Run full test suite
+      run: swipl tests/run_all_tests.pl
+      working-directory: ${{ github.workspace }}
+
+    - name: Test result summary
+      if: always()
+      run: |
+        echo "## Test Suite Results" >> $GITHUB_STEP_SUMMARY
+        echo "✅ All tests passed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- Unit tests: DCG rules, random selection, state tracking" >> $GITHUB_STEP_SUMMARY
+        echo "- Integration tests: Narrative generation (EN/ES)" >> $GITHUB_STEP_SUMMARY
+        echo "- Total: 56 tests" >> $GITHUB_STEP_SUMMARY

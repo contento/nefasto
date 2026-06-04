@@ -1,6 +1,63 @@
-# Running Prolog Discourse Generator
+# Running & Testing Prolog Discourse Generator (Nefasto)
 
-Two ways to use the Prolog Discourse Generator: **Simple TUI** or **Advanced Web UI**.
+Three ways to interact with Nefasto:
+1. **Test Suite** - Verify code quality (unit + integration tests)
+2. **Simple TUI** - Generate narratives interactively
+3. **Advanced Web UI** - Browser-based interface
+
+---
+
+## Testing (Manual & CI)
+
+**Before committing any changes, run the test suite:**
+
+### Quick Verification (5 seconds)
+```bash
+swipl tests/run_tests.pl
+```
+Output: Smoke tests verify narrative generation works
+
+### Full Test Suite (20 seconds)
+```bash
+swipl tests/run_all_tests.pl
+```
+Output: 56 unit + integration tests (all must pass)
+
+### Test Structure
+- `tests/unit/` - Individual predicate tests (plunit)
+  - `random_utils_test.pl` - Random selection, weighted_random, pacing
+  - `generator_test.pl` - DCG rules, subject tracking
+  - `state_test.pl` - Entity tracking, locations, actions
+- `tests/integration/` - Full narrative generation pipeline
+  - `narrative_generation_test.pl` - Story/dialogue/description EN/ES
+
+### Understanding Test Output
+```
+% [1/56] random_utils:random_between_in_range .... passed (0.427 sec)
+% [2/56] generator:space_rule ....................... passed (0.000 sec)
+...
+% 56 tests passed
+```
+
+**All tests must pass before committing.**
+
+### Continuous Integration (GitHub Actions)
+
+Tests run automatically on:
+- Every push to `main` branch
+- Every pull request
+- Manual trigger via `gh workflow run tests.yml`
+
+View results:
+```bash
+# Check workflow status
+gh run list --workflow tests.yml
+
+# View detailed output
+gh run view <run-id>
+```
+
+See `.github/workflows/tests.yml` for CI configuration.
 
 ---
 

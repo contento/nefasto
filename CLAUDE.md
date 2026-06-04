@@ -70,14 +70,30 @@ docs/
 - `tests/run_all_tests.pl` - Full test suite (unit + integration)
 - `tests/run_tests.pl` - Quick smoke test (fast verification)
 
-**Before every commit:**
+**Manual Testing (before every commit):**
 
 ```bash
-# Full test suite (unit + integration) - ~30 seconds
+# Full test suite (unit + integration) - ~20 seconds
 swipl tests/run_all_tests.pl
 
-# Quick smoke test - ~5 seconds (for rapid iteration)
+# Quick smoke test - ~5 seconds (for rapid iteration during development)
 swipl tests/run_tests.pl
+```
+
+**Continuous Integration (Automatic):**
+- Tests run on every push to `main` branch
+- Tests run on all pull requests
+- CI configuration: `.github/workflows/tests.yml`
+- All 56 tests must pass before merging
+
+**Workflow:**
+```
+1. Make code changes
+2. Run locally: swipl tests/run_all_tests.pl
+3. Commit + push
+4. GitHub Actions runs tests automatically
+5. Check results in Actions tab (must be green)
+6. PR/merge only if all tests pass
 ```
 
 **Unit Tests** (in `tests/unit/`)
