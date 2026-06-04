@@ -1,0 +1,18 @@
+# Graphify Configuration
+# This file is committed to git and shared with the team
+# For secrets (API keys), see .env file
+
+[input]
+source = "README.md"
+type = "auto"
+
+[output]
+directory = "graphify-out"
+format = "json"
+
+[model]
+name = "mistralai/mistral-7b-instruct:free"
+
+[generation]
+temperature = 0.7
+max_tokens = 2000
