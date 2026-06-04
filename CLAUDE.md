@@ -62,11 +62,34 @@ docs/
 - Turbo Prolog notes: Include in dedicated comments for historical context
 - No helper abstractions unless used 3+ times
 
-### Testing
+### Testing (REQUIRED)
+
+**Always run tests before committing:**
+
+```bash
+# Run the full test suite
+swipl tests/run_tests.pl
+```
+
+This verifies:
+- ✓ DCG rules execute correctly
+- ✓ Word banks load for both languages
+- ✓ English/Spanish story generation
+- ✓ Dialogue and description generation
+- ✓ State tracking and advance_line
+
+**When adding features, update tests:**
+1. Add test cases to `tests/run_tests.pl` that exercise the new feature
+2. Run tests to verify: `swipl tests/run_tests.pl`
+3. Commit tests along with feature code
+4. Never merge without all tests passing
+
+**Manual testing (supplementary):**
 - Test narrative generation with `--lang en` and `--lang es`
 - Verify coherence: check that entities don't contradict themselves
 - Run with different seeds: `--seed 42`, `--seed 123` for variety
 - Load each config format: `--config config/default.json` etc.
+- Test TUI interactively: `swipl -l src/main.pl`
 
 ### Turbo Prolog Notes Format
 When documenting historical context, use:
