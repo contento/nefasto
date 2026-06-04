@@ -117,6 +117,45 @@ swipl -l src/main.pl -- --lang es --seed 123 --config config/custom.yaml
 2. Config file (JSON/YAML/TOML)
 3. Built-in defaults in main.pl
 
+## Documentation Requirements (CRITICAL)
+
+**Keep documentation in sync with code:**
+
+1. **README.md** - Project overview & examples
+   - Update example outputs when narrative generation changes
+   - Keep project structure accurate (currently: nefasto/)
+   - Update feature list if adding/removing capabilities
+   - Fix any broken commands or outdated setup instructions
+
+2. **CLAUDE.md** - Instructions for AI assistants (THIS FILE)
+   - Update architecture decisions when design changes
+   - Add new guidelines when discovering patterns
+   - Keep directory structure current
+   - Document testing and documentation requirements
+
+3. **TODO.md** - Development roadmap
+   - Mark completed tasks with ✅ when finished
+   - Update bug lists as issues are fixed
+   - Document code review findings with context
+   - Reflect current state (fixes, known issues, next priorities)
+
+4. **RUN.md** - Setup & execution instructions
+   - Keep CLI examples working
+   - Update paths if directory structure changes
+   - Document any new command-line arguments
+   - Fix broken links or outdated instructions
+
+5. **wiki_en.md / wiki_es.md** - Detailed documentation
+   - Explain architectural decisions
+   - Document predicate behavior and invariants
+   - Include usage examples
+
+**When committing:**
+- If code changes behavior → update README examples
+- If adding features → update CLAUDE.md guidelines
+- If fixing bugs → update TODO.md findings
+- If changing commands/paths → update RUN.md
+
 ## Current Limitations (Intentional)
 - No constraint solving (CLP) yet - keep it simple
 - No tabling/memoization - each generation is fresh
@@ -124,10 +163,10 @@ swipl -l src/main.pl -- --lang es --seed 123 --config config/custom.yaml
 - Narrative templates are basic - extend in narratives.pl
 
 ## Next Steps (See TODO.md)
-1. Fix DCG phrase/3 integration bugs
-2. Expand word banks (150+ per category per language)
-3. Add more narrative templates (hero's journey, etc.)
-4. Implement proper config file parsing
+1. Expand word banks (150+ per category per language)
+2. Add more narrative templates (hero's journey, three-act structure)
+3. Implement proper config file parsing (currently stubs)
+4. Wire up unused features (anaphora, ontology constraints, narrative templates)
 5. Add coherence validation metrics
 6. Expand TUI with more options
 

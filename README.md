@@ -121,34 +121,45 @@ cd web && npm install
 ## Project Structure
 
 ```
-prolog-discourse-gen/
-├── src/                    # Core Prolog modules
-│   ├── main.pl            # Entry point & CLI
-│   ├── tui.pl             # Terminal UI
-│   ├── generator.pl       # DCG rules & phrase generation
-│   ├── ontology.pl        # Semantic rules & relationships
-│   ├── state.pl           # Entity tracking & consistency
-│   ├── config.pl          # Configuration loader
-│   └── random_utils.pl    # Random selection utilities
-├── data/                  # Lexicons & templates
-│   ├── dict_en.pl         # English word banks
-│   ├── dict_es.pl         # Spanish word banks
-│   └── narratives.pl      # Story templates
-├── config/                # Configuration files
-│   ├── default.json       # JSON format
-│   ├── default.yaml       # YAML format
-│   └── default.toml       # TOML format
-├── docs/                  # Documentation
-│   ├── wiki_en.md         # English wiki (Obsidian)
-│   └── wiki_es.md         # Spanish wiki (Obsidian)
-├── CLAUDE.md              # Instructions for Claude Code
-├── .copilot/              # GitHub Copilot configuration
-│   └── INSTRUCTIONS.md    # Copilot guidelines
-├── README.md              # This file
-├── TODO.md                # Development roadmap
-├── HANDOFF.md             # Handoff notes for collaborators
-└── .graphifyignore        # Knowledge graph configuration
-
+nefasto/                      # Nefasto Discourse Generator
+├── src/                      # Core Prolog modules
+│   ├── main.pl              # Entry point & CLI arg parsing
+│   ├── tui.pl               # Terminal UI (cross-platform ANSI)
+│   ├── generator.pl         # DCG rules & phrase/3 generation
+│   ├── ontology.pl          # Entity relationships & constraints
+│   ├── state.pl             # Entity tracking & coherence
+│   ├── config.pl            # Configuration loader (JSON/YAML/TOML)
+│   ├── random_utils.pl      # Random selection & word picking
+│   └── server.pl            # HTTP server (REST API)
+│
+├── data/                     # Lexicons & narrative templates
+│   ├── dict_en.pl           # English word banks (34+ nouns)
+│   ├── dict_es.pl           # Spanish word banks (34+ sustantivos)
+│   └── narratives.pl        # Story templates & narrative structures
+│
+├── tests/                    # Test suite
+│   └── run_tests.pl         # Comprehensive test runner (7 test categories)
+│
+├── config/                   # Configuration examples
+│   ├── default.json         # JSON configuration template
+│   ├── default.yaml         # YAML configuration template
+│   └── default.toml         # TOML configuration template
+│
+├── docs/                     # Documentation
+│   ├── wiki_en.md           # English wiki (Obsidian-compatible)
+│   └── wiki_es.md           # Spanish wiki (Obsidian-compatible)
+│
+├── web/                      # Web UI (React frontend) [optional]
+│   ├── README.md            # Web setup instructions
+│   └── package.json         # Node.js dependencies
+│
+├── CLAUDE.md                # AI assistant instructions (testing required!)
+├── README.md                # This file
+├── README.es.md             # Spanish README
+├── RUN.md                   # Detailed setup & run instructions
+├── TODO.md                  # Development roadmap & code review findings
+├── HANDOFF.md               # Handoff notes for collaborators
+└── .graphifyignore          # Knowledge graph configuration
 ```
 
 ## How It Works
