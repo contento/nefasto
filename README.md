@@ -372,15 +372,15 @@ Currently: manual testing via TUI. See TODO.md for automated test plan.
 
 ## Get Started
 
+### Quick Start (Nefasto)
+
 ```bash
 # Clone the repo
-git clone <url>
-cd prolog-discourse-gen
+git clone https://github.com/contento/nefasto
+cd nefasto
 
-# Install SWI-Prolog if needed
-# (macOS: brew install swi-prolog)
-# (Linux: sudo apt install swi-prolog)
-# (Windows: download from swi-prolog.org)
+# Verify tests pass (56/56)
+swipl tests/run_all_tests.pl
 
 # Run the interactive UI
 swipl -l src/main.pl
@@ -388,8 +388,27 @@ swipl -l src/main.pl
 # Or generate a story in Spanish
 swipl -l src/main.pl -- --lang es --seed 42
 
+# Generate knowledge graph
+cp .env.example .env
+# Edit .env and add API keys
+./scripts/run-graphify.sh README.md
+
 # See TODO.md for what's next
 ```
+
+### Generate Knowledge Graph
+
+Analyze code with Claude AI to build knowledge graphs:
+
+```bash
+# Bash/zsh/bash
+./scripts/run-graphify.sh README.md
+
+# PowerShell (Windows)
+.\scripts\run-graphify.ps1 README.md
+```
+
+See [scripts/README.md](scripts/README.md) for full documentation on graphify scripts and configuration.
 
 ---
 
