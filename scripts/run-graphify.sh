@@ -22,8 +22,14 @@ else
 fi
 
 # Validate required variables
-if [ -z "$GRAPHIFY_API_KEY" ]; then
-    echo "❌ Error: GRAPHIFY_API_KEY not set in .env"
+if [ -z "$OPENROUTER_API_KEY" ]; then
+    echo "❌ Error: OPENROUTER_API_KEY not set in .env"
+    echo ""
+    echo "Get a free OpenRouter API key:"
+    echo "  1. Visit: https://openrouter.ai"
+    echo "  2. Sign up (free)"
+    echo "  3. Get API key from: https://openrouter.ai/keys"
+    echo "  4. Add to .env: OPENROUTER_API_KEY=sk-or-v1-YOUR_KEY"
     exit 1
 fi
 

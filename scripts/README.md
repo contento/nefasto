@@ -8,21 +8,27 @@ Generate a knowledge graph from project files using Claude AI.
 
 ### Setup
 
-1. **Copy environment template:**
+1. **Get free OpenRouter API key:**
+   - Visit https://openrouter.ai
+   - Sign up (free - no credit card required)
+   - Get your API key from https://openrouter.ai/keys
+   - Free tier: 5M tokens/month
+
+2. **Copy environment template:**
    ```bash
    cp .env.example .env
    ```
 
-2. **Edit `.env` and add your API keys:**
+3. **Edit `.env` and add your OpenRouter key:**
    ```bash
    # .env
-   GRAPHIFY_API_KEY=your-api-key-here
-   ANTHROPIC_API_KEY=your-anthropic-key-here
+   OPENROUTER_API_KEY=sk-or-v1-YOUR_API_KEY_HERE
+   GRAPHIFY_MODEL=mistralai/mistral-7b-instruct:free
    GRAPHIFY_INPUT=README.md
    GRAPHIFY_OUTPUT=graphify-out
    ```
 
-3. **Make script executable (Linux/macOS):**
+4. **Make script executable (Linux/macOS):**
    ```bash
    chmod +x scripts/run-graphify.sh
    ```
@@ -61,20 +67,31 @@ Create a `.env` file from `.env.example`:
 
 ```bash
 # Required
-GRAPHIFY_API_KEY=your-api-key                    # Graphify API key
+OPENROUTER_API_KEY=sk-or-v1-YOUR_KEY            # OpenRouter free API key
 GRAPHIFY_INPUT=README.md                         # Input file/directory
-ANTHROPIC_API_KEY=your-anthropic-key            # Claude API key
+
+# Model selection (free tier options)
+GRAPHIFY_MODEL=mistralai/mistral-7b-instruct:free  # Fast & good quality
+# Alternative free models:
+#   meta-llama/llama-2-7b-chat:free
+#   gryphe/mythomist-7b:free
+#   openchat/openchat-7b:free
 
 # Optional
 GRAPHIFY_OUTPUT=graphify-out                     # Output directory
 GRAPHIFY_FORMAT=json                             # Output format (json, yaml)
 GRAPHIFY_INPUT_TYPE=auto                         # Input type (auto, code, markdown, text)
-GRAPHIFY_MODEL=claude-opus-4-8                   # Model to use
 GRAPHIFY_TEMPERATURE=0.7                         # Generation temperature (0-1)
 GRAPHIFY_MAX_TOKENS=2000                         # Max response tokens
 GRAPHIFY_VERBOSE=false                           # Verbose logging
 GRAPHIFY_DEBUG=false                             # Debug mode
 ```
+
+**OpenRouter Free Tier:**
+- Sign up: https://openrouter.ai (no credit card)
+- Get key: https://openrouter.ai/keys
+- Free: 5M tokens/month
+- Multiple free models available
 
 ### Security
 
