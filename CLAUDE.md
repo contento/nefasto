@@ -62,31 +62,56 @@ docs/
 - Turbo Prolog notes: Include in dedicated comments for historical context
 - No helper abstractions unless used 3+ times
 
-### Testing (REQUIRED)
+### Testing (REQUIRED) - Hybrid Approach
 
-**Always run tests before committing:**
+**Test Structure:**
+- `tests/unit/` - Unit tests using plunit (individual predicates)
+- `tests/integration/` - Integration tests (complete narratives)
+- `tests/run_all_tests.pl` - Full test suite (unit + integration)
+- `tests/run_tests.pl` - Quick smoke test (fast verification)
+
+**Before every commit:**
 
 ```bash
-# Run the full test suite
+# Full test suite (unit + integration) - ~30 seconds
+swipl tests/run_all_tests.pl
+
+# Quick smoke test - ~5 seconds (for rapid iteration)
 swipl tests/run_tests.pl
 ```
 
-This verifies:
-- ✓ DCG rules execute correctly
-- ✓ Word banks load for both languages
-- ✓ English/Spanish story generation
-- ✓ Dialogue and description generation
-- ✓ State tracking and advance_line
+**Unit Tests** (in `tests/unit/`)
+- `random_utils_test.pl` - Random selection, weighted_random, pacing
+- `generator_test.pl` - DCG rules (space, copula, dialogue, description)
+- `state_test.pl` - Entity tracking, advance_line, action recording
 
-**When adding features, update tests:**
-1. Add test cases to `tests/run_tests.pl` that exercise the new feature
-2. Run tests to verify: `swipl tests/run_tests.pl`
-3. Commit tests along with feature code
-4. Never merge without all tests passing
+**Integration Tests** (in `tests/integration/`)
+- `narrative_generation_test.pl` - Full pipeline (EN/ES, all types)
+- Tests reproducibility (same seed = same output)
+- Tests language switching
+- Tests multiple generations in sequence
 
-**Manual testing (supplementary):**
+**When adding features:**
+
+1. **Write unit test first** (TDD):
+   ```prolog
+   % In tests/unit/mymodule_test.pl
+   test(my_feature_works) :-
+       my_predicate(Input, Output),
+       Output = expected_value.
+   ```
+
+2. **Implement feature** in src/
+
+3. **Run full suite**: `swipl tests/run_all_tests.pl`
+
+4. **Commit tests + code** together
+
+5. **Never merge without passing tests**
+
+**Manual testing** (supplementary):
 - Test narrative generation with `--lang en` and `--lang es`
-- Verify coherence: check that entities don't contradict themselves
+- Verify coherence: entities don't contradict themselves
 - Run with different seeds: `--seed 42`, `--seed 123` for variety
 - Load each config format: `--config config/default.json` etc.
 - Test TUI interactively: `swipl -l src/main.pl`

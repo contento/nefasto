@@ -1,6 +1,7 @@
 #!/usr/bin/env swipl
-% Test suite for Prolog Discourse Generator
-% Run with: swipl tests/run_tests.pl
+% Quick smoke test for Prolog Discourse Generator
+% For comprehensive testing (unit + integration), use: swipl tests/run_all_tests.pl
+% For quick verification, use this: swipl tests/run_tests.pl
 
 :- initialization(main).
 
