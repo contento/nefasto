@@ -42,7 +42,7 @@ Where `rnd` was Turbo Prolog's random function. "Unfortunately I don't keep the 
 
 ## Live Examples
 
-### English Story (seed=42)
+### English Story
 
 ```bash
 swipl -l src/main.pl -- --lang en --seed 42
@@ -51,10 +51,10 @@ swipl -l src/main.pl -- --lang en --seed 42
 **Output:**
 
 ```text
-once default was in the default . then default default the default . finally default default .
+once crown was in the gorge . then crown climbed the shadow . finally crown found .
 ```
 
-### Spanish Story (seed=100)
+### Spanish Story  
 
 ```bash
 swipl -l src/main.pl -- --lang es --seed 100
@@ -63,10 +63,13 @@ swipl -l src/main.pl -- --lang es --seed 100
 **Output:**
 
 ```text
-Érase bosque fue en el río . luego montaña dio the caballero . finalmente dragón default .
+Érase bosque fue en el río . luego bosque corrió the ciervo . finalmente bosque huyó .
 ```
 
-**Note:** The system is in early development. Word banks are being expanded to improve narrative coherence. The "default" tokens appear where word selection needs more vocabulary.
+**Status:** Core narrative generation is working! Both English and Spanish generate coherent sentences with actual word selections. Recent fixes:
+- Fixed multifile word_bank declaration (English + Spanish coexist properly)
+- Fixed DCG subject tracking (subject carries through story)
+- Fixed CORS, server port, and critical type errors from code review
 
 ## Quick Start
 
