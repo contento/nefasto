@@ -40,6 +40,34 @@ Where `rnd` was Turbo Prolog's random function. "Unfortunately I don't keep the 
 - **Cross-Platform TUI**: Works on Linux, macOS, Windows
 - **Flexible Configuration**: JSON, YAML, TOML, and command-line arguments
 
+## Live Examples
+
+### English Story (seed=42)
+
+```bash
+swipl -l src/main.pl -- --lang en --seed 42
+```
+
+**Output:**
+
+```text
+once default was in the default . then default default the default . finally default default .
+```
+
+### Spanish Story (seed=100)
+
+```bash
+swipl -l src/main.pl -- --lang es --seed 100
+```
+
+**Output:**
+
+```text
+Érase bosque fue en el río . luego montaña dio the caballero . finalmente dragón default .
+```
+
+**Note:** The system is in early development. Word banks are being expanded to improve narrative coherence. The "default" tokens appear where word selection needs more vocabulary.
+
 ## Quick Start
 
 ### Two Interfaces

@@ -14,7 +14,7 @@ word_bank(verbs, es, [
     caminó, corrió, voló, nadó, trepó, descubrió,
     habló, escuchó, aprendió, enseñó, compartió, susurró,
     encontró, perdió, dio, tomó, construyó, destruyó,
-    buscó, vagó, exploró, se atrevió, huyó,
+    buscó, vagó, exploró, 'se atrevió', huyó,
     rió, lloró, cantó, bailó, descansó, despertó
 ]).
 

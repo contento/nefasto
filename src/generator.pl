@@ -22,21 +22,43 @@ generate_narrative(description, Lang, Narrative) :-
 % Simple Story Structure: setup -> complication -> resolution
 story(Lang) --> setup(Lang), complication(Lang), resolution(Lang).
 
-setup(Lang) -->
-    [Once], space, subject(Lang, Subj), space,
-    copula(Lang), space, location(Lang, Loc), ['.'],
+% English setup
+setup(en) -->
+    [once], space, subject(en, Subj), space,
+    copula(en), space, location(en, Loc), ['.'],
     { record_entity(subject, Subj),
       record_entity(location, Loc) }.
 
-complication(Lang) -->
-    [Then], space, subject(Lang, Subj), space,
-    action(Lang, Action), space, object(Lang, Obj), ['.'],
+% Spanish setup
+setup(es) -->
+    ['Érase'], space, subject(es, Subj), space,
+    copula(es), space, location(es, Loc), ['.'],
+    { record_entity(subject, Subj),
+      record_entity(location, Loc) }.
+
+% English complication
+complication(en) -->
+    [then], space, subject(en, Subj), space,
+    action(en, Action), space, object(en, Obj), ['.'],
     { record_entity(action, Action),
       record_entity(object, Obj) }.
 
-resolution(Lang) -->
-    [Finally], space, subject(Lang, Subj), space,
-    action(Lang, _), ['.'].
+% Spanish complication
+complication(es) -->
+    [luego], space, subject(es, Subj), space,
+    action(es, Action), space, object(es, Obj), ['.'],
+    { record_entity(action, Action),
+      record_entity(object, Obj) }.
+
+% English resolution
+resolution(en) -->
+    [finally], space, subject(en, Subj), space,
+    action(en, _), ['.'].
+
+% Spanish resolution
+resolution(es) -->
+    [finalmente], space, subject(es, Subj), space,
+    action(es, _), ['.'].
 
 % Dialogue: speaker1 says something, speaker2 replies
 dialogue(Lang) -->
