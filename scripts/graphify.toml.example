@@ -4,7 +4,8 @@
 
 [input]
 # Input source (file path, URL, or directory)
-source = "README.md"
+# "." = entire project, "README.md" = single file
+source = "."
 
 # Input type (auto, code, markdown, text)
 type = "auto"
@@ -13,8 +14,10 @@ type = "auto"
 # Output directory for knowledge graph
 directory = "graphify-out"
 
-# Graph format (json, yaml, xml)
-format = "json"
+# Graph formats to generate (can be array for multiple)
+# Options: json, html, yaml, xml, markdown
+format = ["json", "html", "yaml", "xml"]
+# Or single format: format = "json"
 
 [model]
 # Model to use (free tier options from OpenRouter)

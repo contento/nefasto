@@ -3,16 +3,13 @@
 # For secrets (API keys), see .env file
 
 [input]
-source = "README.md"
+source = "."
 type = "auto"
 
 [output]
 directory = "graphify-out"
-format = "json"
+format = ["json", "html", "yaml", "xml"]
 
 [model]
 name = "mistralai/mistral-7b-instruct:free"
 
-[generation]
-temperature = 0.7
-max_tokens = 2000
