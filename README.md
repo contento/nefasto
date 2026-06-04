@@ -1,12 +1,23 @@
-# Prolog Discourse Generator
+# Prolog Discourse Generator: Reviving Nefasto
 
 **English** | **[Español](README.es.md)** 🇪🇸
 
-A pure Prolog narrative generator reviving 1989 Turbo Prolog techniques with modern SWI-Prolog. Generates coherent stories, dialogues, and descriptions in English and Spanish—no LLMs, no neural networks, just pure logic.
+A pure Prolog narrative generator reviving the original **Nefasto discourse generator**—a real project built at [Universidad de Antioquia](https://www.udea.edu.co/) (Medellín) in the late 1980s using Turbo Prolog.
+
+## The Story Behind the Name
+
+In the late 1980s, Prof. Fabian Rios built a simple discourse generator using Turbo Prolog: 10 columns, each with ~10 random options, concatenated into prose. Each output was "signed" by a fictional author: **Nefasto Bocazza** (originally "Necfardo Bocazza," after NEC—the brand of the [Systems Engineering Department](https://ingenieria.udea.edu.co/)'s first PC).
+
+Prof. Roberto Flores ran the program daily, printed the discourses, and posted them on the faculty bulletin board as a humorous response to the university's verbose professors: "so much discourse and so little action." It worked. The satire became a beloved tradition.
+
+**This project revives that spirit**: pure logic, simple rules, and coherent narratives generated without neural networks or statistical models. Just Prolog, just like 1989—but with the advantages of modern SWI-Prolog.
+
+---
 
 ## Features
 
 - **Pure Logic**: No ML, no LLMs, no black boxes. Just Prolog.
+- **Revived from History**: Based on a real 1989 discourse generator at a Colombian university
 - **Coherent Narratives**: Ontologies and state tracking prevent contradictions
 - **Simple & Extensible**: Word banks, DCG grammars, narrative templates
 - **Multilingual**: English and Spanish support from the ground up
@@ -85,7 +96,8 @@ prolog-discourse-gen/
 │   ├── wiki_en.md         # English wiki (Obsidian)
 │   └── wiki_es.md         # Spanish wiki (Obsidian)
 ├── CLAUDE.md              # Instructions for Claude Code
-├── .copilot-instructions.md
+├── .copilot/              # GitHub Copilot configuration
+│   └── INSTRUCTIONS.md    # Copilot guidelines
 ├── README.md              # This file
 ├── TODO.md                # Development roadmap
 ├── HANDOFF.md             # Handoff notes for collaborators
