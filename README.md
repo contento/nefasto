@@ -14,34 +14,49 @@ A pure Prolog narrative generator reviving 1989 Turbo Prolog techniques with mod
 
 ## Quick Start
 
+### Two Interfaces
+
+Choose one:
+
+#### **Simple TUI** (Terminal-based)
+```bash
+# Requirements: Just SWI-Prolog
+
+swipl -l src/main.pl
+```
+
+#### **Advanced Web UI** (Browser-based)
+```bash
+# Requirements: Node.js + npm + SWI-Prolog
+
+# Terminal 1: Start Prolog backend
+swipl -f src/server.pl -t start_server
+
+# Terminal 2: Start React frontend
+cd web && npm install && npm run dev
+```
+
+### Full Setup Details
+
+See **[RUN.md](RUN.md)** for:
+- Step-by-step instructions for both interfaces
+- CLI arguments for TUI
+- Configuration for Web UI
+- Troubleshooting guide
+- Architecture comparison
+
 ### Requirements
-- SWI-Prolog 8.0+ ([download](https://www.swi-prolog.org/download/stable))
+- **SWI-Prolog 8.0+** ([download](https://www.swi-prolog.org/download/stable))
+- **Node.js 14+** (only for Web UI) ([download](https://nodejs.org/))
 - UTF-8 terminal support (modern by default)
 
 ### Installation
 ```bash
 git clone https://github.com/yourusername/prolog-discourse-gen
 cd prolog-discourse-gen
-```
 
-### Run the Interactive TUI
-```bash
-swipl -l src/main.pl
-```
-
-### Run with Arguments
-```bash
-# Generate in Spanish
-swipl -l src/main.pl -- --lang es
-
-# Set random seed for reproducibility
-swipl -l src/main.pl -- --seed 42
-
-# Load custom configuration
-swipl -l src/main.pl -- --config config/custom.yaml
-
-# Combine arguments
-swipl -l src/main.pl -- --lang es --seed 123 --config config/default.toml
+# For Web UI, also:
+cd web && npm install
 ```
 
 ## Project Structure
