@@ -35,8 +35,14 @@ parse_yaml(Lines, Lang, Profile) :-
     atom_concat(Prefix, Profile, LangProfile),
     parse_yaml_lines(Lines, LangProfile, undefined, []).
 
-% End of file
-parse_yaml_lines([], _, _, _).
+% End of file - save final category if any
+parse_yaml_lines([], LangProfile, Category, Words) :-
+    (Category \= undefined, Words \= [] ->
+        reverse(Words, WordList),
+        assertz(word_bank(Category, LangProfile, WordList))
+    ;
+        true
+    ), !.
 
 % Category line (word_type:)
 parse_yaml_lines([Line | Rest], LangProfile, PrevCategory, PrevWords) :-
