@@ -9,6 +9,7 @@ current_profile(political).
 % Each profile has: name, description, word_bank modifier
 profile(political, 'Political discourse - argumentative, persuasive, policy-focused').
 profile(sales, 'Sales pitch - action-oriented, benefit-focused, persuasive').
+profile(karen, 'Karen discourse - entitled, demanding, complaint-focused').
 
 % Validate profile
 is_valid_profile(Profile) :-
@@ -21,7 +22,7 @@ set_profile(NewProfile) :-
     assertz(current_profile(NewProfile)).
 
 set_profile(Invalid) :-
-    format('ERROR: Unknown profile "~w". Valid profiles: political, sales~n', [Invalid]),
+    format('ERROR: Unknown profile "~w". Valid profiles: political, sales, karen~n', [Invalid]),
     fail.
 
 % Get current profile

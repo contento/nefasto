@@ -23,8 +23,10 @@ current_seed(42).
 % Load profile-specific dictionaries on startup
 :- load_dictionaries(en, political).
 :- load_dictionaries(en, sales).
+:- load_dictionaries(en, karen).
 :- load_dictionaries(es, political).
 :- load_dictionaries(es, sales).
+:- load_dictionaries(es, karen).
 
 main :-
     cli_args(Args),
