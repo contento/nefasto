@@ -25,11 +25,10 @@ Output: 56 unit + integration tests (all must pass)
 
 ### Test Structure
 - `tests/unit/` - Individual predicate tests (plunit)
-  - `random_utils_test.pl` - Random selection, weighted_random, pacing
-  - `generator_test.pl` - DCG rules, subject tracking
-  - `state_test.pl` - Entity tracking, locations, actions
+  - `random_utils_test.pl` - Profile-aware word selection
+  - `generator_test.pl` - DCG rules, story structure, language support
 - `tests/integration/` - Full narrative generation pipeline
-  - `narrative_generation_test.pl` - Story/dialogue/description EN/ES
+  - `narrative_generation_test.pl` - Story/dialogue/description EN/ES, reproducibility
 
 ### Understanding Test Output
 ```
@@ -71,7 +70,7 @@ Pure Prolog with ANSI colors. No dependencies beyond SWI-Prolog.
 ### Run
 
 ```bash
-cd /Users/contento/projects/prolog-discourse-gen
+cd /Users/contento/projects/contento/nefasto
 
 # Interactive menu
 swipl -l src/main.pl
@@ -83,14 +82,19 @@ swipl -l src/main.pl -- --lang es --seed 42 --config config/default.yaml
 ### CLI Arguments
 
 - `--lang en|es` - Language (default: en)
+- `--profile NAME` - Discourse profile (default: political)
+  - Options: political, sales, karen, academic, casual, legal, journalistic, poetic, technical, conspiracy, motivational, passive_aggressive
 - `--seed N` - Random seed for reproducibility (default: 42)
 - `--config FILE` - Load JSON/YAML/TOML config
 
 ### Example
 
 ```bash
-# Generate Spanish stories with fixed seed
-swipl -l src/main.pl -- --lang es --seed 100
+# Generate Spanish academic stories with fixed seed
+swipl -l src/main.pl -- --lang es --profile academic --seed 100
+
+# Generate Karen profile stories
+swipl -l src/main.pl -- --profile karen --seed 42
 
 # Load custom config
 swipl -l src/main.pl -- --config config/custom.yaml
@@ -110,7 +114,7 @@ Browser-based interface with real-time generation. Client + Backend architecture
 ### Setup (First Time Only)
 
 ```bash
-cd /Users/contento/projects/prolog-discourse-gen/web
+cd /Users/contento/projects/contento/nefasto/web
 
 # Install React dependencies
 npm install
@@ -124,7 +128,7 @@ cp .env.example .env
 **Terminal 1 - Start Prolog Backend**
 
 ```bash
-cd /Users/contento/projects/prolog-discourse-gen
+cd /Users/contento/projects/contento/nefasto
 swipl -f src/server.pl -t start_server
 ```
 
@@ -138,7 +142,7 @@ Server running on http://localhost:3001
 **Terminal 2 - Start React Frontend**
 
 ```bash
-cd /Users/contento/projects/prolog-discourse-gen/web
+cd /Users/contento/projects/contento/nefasto/web
 
 # Development mode
 npm run dev
@@ -158,7 +162,7 @@ This opens http://localhost:3000 in your browser automatically.
 ### Build for Production
 
 ```bash
-cd /Users/contento/projects/prolog-discourse-gen/web
+cd /Users/contento/projects/contento/nefasto/web
 npm run build
 ```
 
@@ -184,9 +188,10 @@ Creates optimized files in `dist/`. See `web/README.md` for deployment instructi
 
 ## Troubleshooting
 
-### TUI: "No word_bank found"
-- Check `data/dict_en.pl` and `data/dict_es.pl` exist
-- Verify no syntax errors: `swipl -c src/main.pl`
+### TUI: "No words for category"
+- Check `data/dictionaries/*.yaml` files exist (12 profiles × 2 languages)
+- Verify profile is registered in `src/profiles.pl`
+- Check syntax: `swipl -c src/main.pl`
 
 ### Web: "Connection refused"
 - Is Prolog server running? Check Terminal 1
@@ -211,10 +216,10 @@ User Terminal
     ↓ (ANSI colors)
 src/main.pl (Prolog)
     ├─ src/tui.pl (menus)
-    ├─ src/generator.pl (DCG)
-    ├─ src/ontology.pl (rules)
-    ├─ data/dict_*.pl (words)
-    └─ src/state.pl (tracking)
+    ├─ src/generator.pl (DCG, character-driven narratives)
+    ├─ src/profiles.pl (profile registry)
+    ├─ src/dict_loader.pl (loads YAML word banks)
+    └─ data/dictionaries/ (24 profile YAML files)
 ```
 
 ### Web (Advanced)
@@ -225,10 +230,10 @@ http://localhost:3000
     ↓ Fetch API
 http://localhost:3001 (Prolog Server)
     ├─ src/server.pl (HTTP endpoints)
-    ├─ src/generator.pl (DCG)
-    ├─ src/ontology.pl (rules)
-    ├─ data/dict_*.pl (words)
-    └─ src/state.pl (tracking)
+    ├─ src/generator.pl (DCG, character-driven narratives)
+    ├─ src/profiles.pl (profile registry)
+    ├─ src/dict_loader.pl (loads YAML word banks)
+    └─ data/dictionaries/ (24 profile YAML files)
 ```
 
 ---
@@ -239,23 +244,33 @@ http://localhost:3001 (Prolog Server)
 
 **For TUI and Web** (both use same backend):
 
-Edit `data/dict_en.pl` and `data/dict_es.pl`:
+Edit YAML profile files in `data/dictionaries/`:
 
-```prolog
-word_bank(nouns, en, [
-    wizard, knight, dragon, forest, castle,
-    merchant, village, tower  % ← add new words here
-]).
+```yaml
+# data/dictionaries/en_political.yaml
+nouns:
+  - senator
+  - parliament
+  - legislation
+  - new_word  # ← add here
+
+# data/dictionaries/es_political.yaml (update in parallel)
+nouns:
+  - senador
+  - parlamento
+  - legislación
+  - palabra_nueva  # ← Spanish equivalent
 ```
 
-Changes apply to both TUI and Web immediately (restart for TUI, reload web).
+Changes apply to TUI after restart; Web reloads automatically.
 
 ### Adding New Narrative Types
 
-1. Add DCG rule to `src/generator.pl`
-2. Add type to `src/server.pl` validation
-3. Add to React options in `web/src/App.jsx`
-4. Update `data/narratives.pl`
+1. Add DCG rule to `src/generator.pl` (rule + generate_narrative/3 clause)
+2. Add menu option to `src/tui.pl` (format_menu options)
+3. Add handler to `src/tui.pl` (handle_narrative_choice clause)
+4. Test with both languages: `--lang en` and `--lang es`
+5. Optional: Add to `web/src/App.jsx` React UI if using web interface
 
 ### Testing
 
