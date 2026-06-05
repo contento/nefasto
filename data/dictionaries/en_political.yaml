@@ -34,6 +34,39 @@ nouns:
   - campaign
   - election
   - debate
+  - government
+  - state
+  - nation
+  - republic
+  - democracy
+  - monarchy
+  - tyranny
+  - law
+  - justice
+  - constitution
+  - rights
+  - freedom
+  - liberty
+  - sovereignty
+  - power
+  - influence
+  - mandate
+  - term
+  - office
+  - position
+  - vote
+  - ballot
+  - referendum
+  - legislation
+  - bill
+  - act
+  - ordinance
+  - regulation
+  - rule
+  - clause
+  - article
+  - section
+  - provision
 
 verbs:
   - persuaded
@@ -66,6 +99,32 @@ verbs:
   - decreed
   - amended
   - challenged
+  - demanded
+  - petitioned
+  - lobbied
+  - bargained
+  - compromised
+  - sided
+  - switched
+  - betrayed
+  - cooperated
+  - conspired
+  - plotted
+  - maneuvered
+  - calculated
+  - strategized
+  - implemented
+  - enforced
+  - repealed
+  - vetoed
+  - overturned
+  - overrode
+  - sanctioned
+  - condemned
+  - pardoned
+  - sentenced
+  - testified
+  - witnessed
 
 adjectives:
   - radical
@@ -95,6 +154,33 @@ adjectives:
   - unpopular
   - stable
   - volatile
+  - decisive
+  - indecisive
+  - fair
+  - unfair
+  - just
+  - unjust
+  - righteous
+  - corrupt
+  - transparent
+  - opaque
+  - democratic
+  - tyrannical
+  - communist
+  - capitalist
+  - socialist
+  - nationalist
+  - internationalist
+  - centralized
+  - decentralized
+  - unified
+  - fragmented
+  - revolutionary
+  - reactionary
+  - reformist
+  - status-quo
+  - benevolent
+  - malevolent
 
 locations:
   - parliament
