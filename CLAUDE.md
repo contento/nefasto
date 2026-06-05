@@ -15,18 +15,23 @@ A pure Prolog discourse/narrative generator without LLMs, reviving 1989 Turbo Pr
 ### Directory Structure
 ```
 src/
-  main.pl           # Entry point, CLI arg parsing
-  tui.pl            # Terminal UI (cross-platform ANSI)
-  generator.pl      # DCG rules, phrase/3 narrative generation
-  ontology.pl       # Entity relationships, semantic constraints
-  config.pl         # Config loading (JSON/YAML/TOML)
-  random_utils.pl   # Random selection helpers
-  state.pl          # Entity tracking, anaphora, coherence
+  main.pl               # Entry point, CLI arg parsing
+  tui.pl                # Terminal UI (cross-platform ANSI)
+  generator.pl          # DCG rules, phrase/3 narrative generation
+  ontology.pl           # Entity relationships, semantic constraints
+  config.pl             # Config loading (JSON/YAML/TOML)
+  profiles.pl           # Discourse profiles (political, sales)
+  random_utils.pl       # Random selection helpers, profile-aware
+  state.pl              # Entity tracking, anaphora, coherence
 
 data/
-  dict_en.pl        # English lexicon/word banks
-  dict_es.pl        # Spanish lexicon/word banks
-  narratives.pl     # Story templates, narrative structures
+  dict_en.pl            # English fallback lexicon/word banks
+  dict_en_political.pl  # English political profile word banks
+  dict_en_sales.pl      # English sales profile word banks
+  dict_es.pl            # Spanish fallback lexicon/word banks
+  dict_es_political.pl  # Spanish political profile word banks
+  dict_es_sales.pl      # Spanish sales profile word banks
+  narratives.pl         # Story templates, narrative structures
 
 config/
   default.json      # JSON configuration template
@@ -38,11 +43,38 @@ docs/
   wiki_es.md        # Spanish project wiki (Obsidian-compatible)
 ```
 
+### Discourse Profiles
+
+The generator supports **mutually exclusive discourse profiles** that change narrative voice, word choice, and style:
+
+- **political** (default): Argumentative, policy-focused, persuasive (senators, debates, reform)
+- **sales**: Action-oriented, benefit-focused, pitch-style (products, growth, transformation)
+
+**Usage:**
+
+```bash
+swipl -l src/main.pl -- --profile political
+swipl -l src/main.pl -- --profile sales
+```
+
+**Config file:**
+
+```json
+{ "profile": "sales" }
+```
+
+**Implementation:**
+
+- Profile system in `src/profiles.pl`
+- Profile-specific word banks: `dict_en_political.pl`, `dict_en_sales.pl` (same for Spanish)
+- `random_select_word/3` tries profile-specific word banks first, falls back to generic
+- Future: TODO for blending multiple profiles with weighted influence
+
 ### Key Design Decisions
 
 1. **DCG over Manual Parsing**: Use phrase/3 and DCG rules exclusively for syntax
 2. **Dynamic Predicates for State**: Track entities, recent actions, locations with assert/retract
-3. **Word Banks, Not Models**: Simple lists, random_select_word/3 for word choice
+3. **Profile-Aware Word Banks**: Profile-specific word banks with fallback to generic language
 4. **Ontology-First Coherence**: Ensure actions match entity types before generating
 5. **Cross-Platform TUI**: ANSI colors + simple text menus (no ncurses)
 6. **Config is Data**: JSON/YAML/TOML loading for reproducible experiments

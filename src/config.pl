@@ -99,6 +99,7 @@ get_config(Key, Value) :-
     config(Key, Value), !.
 
 get_config(language, en).
+get_config(profile, political).
 get_config(seed, 42).
 get_config(pacing, medium).
 

@@ -8,6 +8,7 @@ current_language(en).
 current_seed(42).
 
 % Load all modules
+:- consult('src/profiles.pl').
 :- consult('src/tui.pl').
 :- consult('src/generator.pl').
 :- consult('src/ontology.pl').
@@ -15,7 +16,11 @@ current_seed(42).
 :- consult('src/random_utils.pl').
 :- consult('src/state.pl').
 :- consult('data/dict_en.pl').
+:- consult('data/dict_en_political.pl').
+:- consult('data/dict_en_sales.pl').
 :- consult('data/dict_es.pl').
+:- consult('data/dict_es_political.pl').
+:- consult('data/dict_es_sales.pl').
 :- consult('data/narratives.pl').
 
 main :-
@@ -40,6 +45,10 @@ process_args(['--lang', Lang | Rest]) :-
     atom_string(LangAtom, Lang),
     retractall(current_language(_)),
     assertz(current_language(LangAtom)),
+    process_args(Rest).
+process_args(['--profile', Profile | Rest]) :-
+    atom_string(ProfileAtom, Profile),
+    set_profile(ProfileAtom),
     process_args(Rest).
 process_args(['--seed', Seed | Rest]) :-
     atom_number(Seed, SeedNum),

@@ -32,20 +32,24 @@ if [ ! -f "$CONFIG_FILE" ]; then
 fi
 echo "✓ Loaded configuration from graphify.toml"
 
-# Validate required variables
-if [ -z "$OPENROUTER_API_KEY" ]; then
-    echo "❌ Error: OPENROUTER_API_KEY not set in .env"
+# Validate required LLM API key
+if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ] && [ -z "$GEMINI_API_KEY" ] && [ -z "$DEEPSEEK_API_KEY" ] && [ -z "$MOONSHOT_API_KEY" ]; then
+    echo "❌ Error: No LLM API key found in .env"
     echo ""
-    echo "Get a free OpenRouter API key:"
-    echo "  1. Visit: https://openrouter.ai"
-    echo "  2. Sign up (free)"
-    echo "  3. Get API key from: https://openrouter.ai/keys"
-    echo "  4. Add to .env: OPENROUTER_API_KEY=sk-or-v1-YOUR_KEY"
+    echo "Graphify requires one of these API keys:"
+    echo "  - ANTHROPIC_API_KEY (Claude) - https://console.anthropic.com"
+    echo "  - OPENAI_API_KEY (GPT) - https://platform.openai.com/api-keys"
+    echo "  - GEMINI_API_KEY (Google) - https://ai.google.dev/api"
+    echo "  - DEEPSEEK_API_KEY (DeepSeek) - https://platform.deepseek.com"
+    echo "  - MOONSHOT_API_KEY (Kimi) - https://platform.moonshot.cn"
+    echo ""
+    echo "Add one to your .env file, e.g.:"
+    echo "  ANTHROPIC_API_KEY=sk-ant-YOUR_KEY"
     exit 1
 fi
 
-# Use command-line argument or fall back to .env
-INPUT_FILE="${1:-$GRAPHIFY_INPUT}"
+# Use command-line argument or fall back to current directory
+INPUT_FILE="${1:-.}"
 
 if [ -z "$INPUT_FILE" ]; then
     echo "❌ Error: No input file specified"
@@ -67,49 +71,42 @@ INPUT_TYPE="${GRAPHIFY_INPUT_TYPE:-auto}"
 VERBOSE="${GRAPHIFY_VERBOSE:-false}"
 DEBUG="${GRAPHIFY_DEBUG:-false}"
 
-# Build graphify command
-GRAPHIFY_CMD="/graphify"
-
 # Check if graphify is installed
 if ! command -v graphify &> /dev/null; then
     echo "❌ Error: graphify command not found"
     echo ""
     echo "Install graphify:"
     echo "  npm install -g @anthropic-ai/graphify"
-    echo "  # or"
-    echo "  pip install graphify"
     exit 1
 fi
 
-# Build arguments
-ARGS="--input '$INPUT_FILE'"
-ARGS="$ARGS --output '$OUTPUT_DIR'"
-ARGS="$ARGS --format '$FORMAT'"
-ARGS="$ARGS --input-type '$INPUT_TYPE'"
+# Build arguments for: graphify extract <path> [options]
+ARGS="extract '$INPUT_FILE'"
+ARGS="$ARGS --out '$OUTPUT_DIR'"
 
 # Add optional arguments
-if [ "$VERBOSE" = "true" ]; then
-    ARGS="$ARGS --verbose"
-fi
-
-if [ "$DEBUG" = "true" ]; then
-    ARGS="$ARGS --debug"
-fi
-
 if [ -n "$GRAPHIFY_MODEL" ]; then
     ARGS="$ARGS --model '$GRAPHIFY_MODEL'"
 fi
 
-if [ -n "$GRAPHIFY_TEMPERATURE" ]; then
-    ARGS="$ARGS --temperature '$GRAPHIFY_TEMPERATURE'"
+if [ "$GRAPHIFY_MODE" = "deep" ]; then
+    ARGS="$ARGS --mode deep"
 fi
 
-if [ -n "$GRAPHIFY_MAX_TOKENS" ]; then
-    ARGS="$ARGS --max-tokens '$GRAPHIFY_MAX_TOKENS'"
+if [ -n "$GRAPHIFY_BACKEND" ]; then
+    ARGS="$ARGS --backend '$GRAPHIFY_BACKEND'"
 fi
 
-if [ -n "$ANTHROPIC_API_KEY" ]; then
-    export ANTHROPIC_API_KEY
+if [ -n "$GRAPHIFY_MAX_WORKERS" ]; then
+    ARGS="$ARGS --max-workers '$GRAPHIFY_MAX_WORKERS'"
+fi
+
+if [ "$GRAPHIFY_NO_CLUSTER" = "true" ]; then
+    ARGS="$ARGS --no-cluster"
+fi
+
+if [ -n "$OPENROUTER_API_KEY" ]; then
+    export OPENROUTER_API_KEY
 fi
 
 # Display configuration
