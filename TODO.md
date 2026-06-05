@@ -221,6 +221,103 @@
 
 ---
 
+## Discourse Profiles Implementation
+
+### Current Profiles (✅ Completed)
+
+- ✅ Political (EN/ES) - argumentative, policy-focused
+- ✅ Sales (EN/ES) - action-oriented, benefit-focused
+- ✅ Karen (EN/ES) - entitled, demanding, complaint-focused
+
+### Profiles to Implement (In Progress)
+
+#### Academic/Scholarly
+- [ ] **en_academic.yaml** - technical, formal, evidence-based
+  - Key terms: research, methodology, hypothesis, paradigm, peer review, empirical
+  - Characters: famous researchers, scientists, academics
+  - Statements: thesis-driven claims, citations, evidence-based assertions
+
+- [ ] **es_academic.yaml** - Spanish academic discourse
+
+#### Casual/Colloquial  
+- [ ] **en_casual.yaml** - friendly, informal, contemporary slang
+  - Key terms: cool, awesome, dude, basically, like, literally
+  - Characters: everyday names, friend groups
+  - Statements: casual observations, informal reactions
+
+- [ ] **es_casual.yaml** - Spanish casual discourse
+
+#### Legal/Formal
+- [ ] **en_legal.yaml** - precise, technical jargon, adversarial
+  - Key terms: plaintiff, defendant, statute, liability, precedent
+  - Characters: lawyers, judges, witnesses
+  - Statements: legal arguments, claims, defenses
+
+- [ ] **es_legal.yaml** - Spanish legal discourse
+
+#### Journalistic/Reportorial
+- [ ] **en_journalistic.yaml** - neutral, informative, fact-based
+  - Key terms: report, source, witness, investigation, allegation
+  - Characters: journalists, sources, public figures
+  - Statements: reported facts, attributed quotes, verified claims
+
+- [ ] **es_journalistic.yaml** - Spanish journalistic discourse
+
+#### Poetic/Lyrical
+- [ ] **en_poetic.yaml** - metaphorical, artistic, evocative, emotional
+  - Key terms: soul, essence, whisper, dance, symphony, dream
+  - Characters: mythical, historical, romantic figures
+  - Statements: lyrical, metaphorical expressions
+
+- [ ] **es_poetic.yaml** - Spanish poetic discourse
+
+#### Technical/Engineering
+- [ ] **en_technical.yaml** - precise, systematic, optimization-focused
+  - Key terms: algorithm, optimization, performance, parameter, infrastructure
+  - Characters: engineers, architects, developers
+  - Statements: technical specifications, optimization claims
+
+- [ ] **es_technical.yaml** - Spanish technical discourse
+
+#### Conspiracy Theorist
+- [ ] **en_conspiracy.yaml** - suspicious, connecting dots, paranoid
+  - Key terms: coverup, truth, evidence, questions, patterns
+  - Characters: whistleblowers, investigators, truth-seekers
+  - Statements: suspicious allegations, connecting patterns
+
+- [ ] **es_conspiracy.yaml** - Spanish conspiracy discourse
+
+#### Motivational Speaker
+- [ ] **en_motivational.yaml** - inspirational, action-oriented, empowering
+  - Key terms: dream, passion, believe, impossible, breakthrough
+  - Characters: inspirational figures, leaders, achievers
+  - Statements: empowering mantras, action calls
+
+- [ ] **es_motivational.yaml** - Spanish motivational discourse
+
+#### Passive-Aggressive
+- [ ] **en_passive_aggressive.yaml** - sarcastic, backhanded, subtle hostility
+  - Key terms: fine, whatever, sure, clearly, apparently
+  - Characters: skeptics, skeptical observers
+  - Statements: sarcastic remarks, backhanded compliments
+
+- [ ] **es_passive_aggressive.yaml** - Spanish passive-aggressive discourse
+
+### Implementation Steps (for each profile)
+1. Create YAML file with 30-40 words per category (nouns, verbs, adjectives, locations, characters, statements)
+2. Register profile in `src/profiles.pl`
+3. Load dictionaries in `src/main.pl`
+4. Test generation: `swipl -l src/main.pl -- --profile [name]`
+5. Regenerate README samples
+
+### Future Enhancements
+- [ ] **Profile Blending** - weighted mix of two profiles (Political + Karen = paranoid policy debate)
+- [ ] **Semantic Ontologies** - validate noun-verb combinations per profile
+- [ ] **Narrative Variety** - 5+ different structures per profile (not just 3-part)
+- [ ] **Verb Conjugation** - proper tense agreement across narrative
+
+---
+
 ## Known Issues
 
 ### High Priority
