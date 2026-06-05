@@ -26,12 +26,13 @@ src/
 
 data/
   dict_en.pl            # English fallback lexicon/word banks
-  dict_en_political.pl  # English political profile word banks
-  dict_en_sales.pl      # English sales profile word banks
   dict_es.pl            # Spanish fallback lexicon/word banks
-  dict_es_political.pl  # Spanish political profile word banks
-  dict_es_sales.pl      # Spanish sales profile word banks
   narratives.pl         # Story templates, narrative structures
+  dictionaries/         # Profile-specific word bank data (YAML)
+    en_political.yaml   # English political discourse word banks
+    en_sales.yaml       # English sales discourse word banks
+    es_political.yaml   # Spanish political discourse word banks
+    es_sales.yaml       # Spanish sales discourse word banks
 
 config/
   default.json      # JSON configuration template
@@ -66,8 +67,10 @@ swipl -l src/main.pl -- --profile sales
 **Implementation:**
 
 - Profile system in `src/profiles.pl`
-- Profile-specific word banks: `dict_en_political.pl`, `dict_en_sales.pl` (same for Spanish)
+- Dictionary loader in `src/dict_loader.pl` (loads YAML files at startup)
+- Profile-specific word banks in `data/dictionaries/` (YAML format)
 - `random_select_word/3` tries profile-specific word banks first, falls back to generic
+- Data/code separation: word banks are data in YAML, not Prolog code
 - Future: TODO for blending multiple profiles with weighted influence
 
 ### Key Design Decisions
@@ -94,15 +97,33 @@ swipl -l src/main.pl -- --profile sales
 - Turbo Prolog notes: Include in dedicated comments for historical context
 - No helper abstractions unless used 3+ times
 
-### Testing (REQUIRED) - Hybrid Approach
+### Testing (REQUIRED) - CI-Only Workflow
 
 **Test Structure:**
+
 - `tests/unit/` - Unit tests using plunit (individual predicates)
 - `tests/integration/` - Integration tests (complete narratives)
 - `tests/run_all_tests.pl` - Full test suite (unit + integration)
-- `tests/run_tests.pl` - Quick smoke test (fast verification)
+- `tests/run_tests.pl` - Quick smoke test (optional manual verification)
 
-**Manual Testing (before every commit):**
+**Continuous Integration (Automatic):**
+
+- Tests run on every push to `main` branch
+- Tests run on all pull requests
+- CI configuration: `.github/workflows/tests.yml`
+- All 56 tests must pass before merging
+
+**Workflow:**
+
+```text
+1. Make code changes
+2. Commit + push (no local test required)
+3. GitHub Actions runs full test suite automatically
+4. Check results in Actions tab (must be green)
+5. PR/merge only if all tests pass
+```
+
+**Optional Manual Testing:**
 
 ```bash
 # Full test suite (unit + integration) - ~20 seconds
@@ -110,22 +131,6 @@ swipl tests/run_all_tests.pl
 
 # Quick smoke test - ~5 seconds (for rapid iteration during development)
 swipl tests/run_tests.pl
-```
-
-**Continuous Integration (Automatic):**
-- Tests run on every push to `main` branch
-- Tests run on all pull requests
-- CI configuration: `.github/workflows/tests.yml`
-- All 56 tests must pass before merging
-
-**Workflow:**
-```
-1. Make code changes
-2. Run locally: swipl tests/run_all_tests.pl
-3. Commit + push
-4. GitHub Actions runs tests automatically
-5. Check results in Actions tab (must be green)
-6. PR/merge only if all tests pass
 ```
 
 **Unit Tests** (in `tests/unit/`)

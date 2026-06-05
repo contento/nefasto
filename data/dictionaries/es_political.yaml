@@ -1,0 +1,163 @@
+# Spanish Political Profile Dictionary
+# Argumentative, policy-focused, persuasive discourse
+
+nouns:
+  - senador
+  - abogado
+  - parlamento
+  - legislador
+  - política
+  - enmienda
+  - decreto
+  - propuesta
+  - facción
+  - coalición
+  - régimen
+  - autoridad
+  - consejo
+  - asamblea
+  - reforma
+  - estatuto
+  - convención
+  - principio
+  - doctrina
+  - ideología
+  - constituyente
+  - votante
+  - ciudadano
+  - delegado
+  - representante
+  - ministro
+  - tratado
+  - alianza
+  - disputa
+  - campaña
+  - elección
+  - debate
+
+verbs:
+  - persuadió
+  - debatió
+  - argumentó
+  - propuso
+  - promulgó
+  - se opuso
+  - abogó
+  - desafió
+  - reformó
+  - cuestionó
+  - declaró
+  - proclamó
+  - convocó
+  - negoció
+  - ratificó
+  - objetó
+  - afirmó
+  - aseveró
+  - disputó
+  - hizo campaña
+  - apeló
+  - convenció
+  - refutó
+  - apoyó
+  - influyó
+  - decidió
+  - gobernó
+  - decretó
+  - enmiendó
+  - impugnó
+
+adjectives:
+  - radical
+  - conservador
+  - moderado
+  - progresista
+  - tradicional
+  - diplomático
+  - pragmático
+  - idealista
+  - autoritario
+  - dominante
+  - influyente
+  - controvertido
+  - contencioso
+  - divisivo
+  - unificador
+  - poderoso
+  - débil
+  - efectivo
+  - inefectivo
+  - estratégico
+  - táctico
+  - legítimo
+  - ilegítimo
+  - popular
+  - impopular
+  - estable
+  - volátil
+
+locations:
+  - parlamento
+  - senado
+  - capital
+  - cámara
+  - tribunal
+  - convención
+  - asamblea
+  - tribunales
+  - cuartel general
+  - ministerio
+  - oficina
+  - capitolio
+  - distrito
+  - región
+  - circunscripción
+  - territorio
+  - jurisdicción
+  - estado
+  - foro
+  - plaza
+  - salón
+  - edificio
+  - recinto
+  - plataforma
+
+characters:
+  - Churchill
+  - Roosevelt
+  - Lincoln
+  - Gandhi
+  - Mandela
+  - Jefferson
+  - Cleopatra
+  - Napoleón
+  - Isabel
+  - Catalina
+  - Constantino
+  - Augusto
+  - Washington
+  - Franklin
+  - Adams
+  - Madison
+  - Hamilton
+  - Jay
+  - Thatcher
+  - Kennedy
+  - Eisenhower
+  - Truman
+  - Reagan
+  - Carter
+
+statements:
+  - La ley debe servir a todos por igual
+  - La reforma requiere acciones audaces
+  - La tradición proporciona estabilidad
+  - La innovación exige coraje
+  - La autoridad debe ser cuestionada
+  - La unidad fortalece nuestra posición
+  - El pueblo exige representación
+  - El progreso viene del debate
+  - Los principios guían nuestras decisiones
+  - La justicia no puede ser postergada
+  - El cambio es inevitable
+  - El liderazgo requiere visión

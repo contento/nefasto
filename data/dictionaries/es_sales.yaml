@@ -1,0 +1,165 @@
+# Spanish Sales Profile Dictionary
+# Action-oriented, benefit-focused, pitch-style discourse
+
+nouns:
+  - producto
+  - solución
+  - servicio
+  - oportunidad
+  - beneficio
+  - oferta
+  - trato
+  - paquete
+  - valor
+  - inversión
+  - retorno
+  - ganancia
+  - éxito
+  - cliente
+  - mercado
+  - ventaja
+  - característica
+  - calidad
+  - rendimiento
+  - resultado
+  - testimonio
+  - asociación
+  - propuesta
+  - contrato
+  - acuerdo
+  - transacción
+  - ingresos
+  - crecimiento
+  - eficiencia
+  - innovación
+  - excelencia
+  - satisfacción
+
+verbs:
+  - descubrió
+  - logró
+  - entregó
+  - transformó
+  - aceleró
+  - superó
+  - mejoró
+  - revolucionó
+  - optimizó
+  - maximizó
+  - expandió
+  - aseguró
+  - capturó
+  - dominó
+  - creó
+  - aprovechó
+  - convenció
+  - persuadió
+  - inspiró
+  - motivó
+  - capacitó
+  - permitió
+  - generó
+  - produjo
+  - rindió
+  - aumentó
+  - fortaleció
+  - amplificó
+
+adjectives:
+  - innovador
+  - comprobado
+  - poderoso
+  - confiable
+  - exclusivo
+  - premium
+  - vanguardista
+  - revolucionario
+  - galardonado
+  - líder del mercado
+  - de clase mundial
+  - de clase superior
+  - incomparable
+  - imbatible
+  - superior
+  - eficiente
+  - efectivo
+  - confiable
+  - dependable
+  - destacado
+  - excepcional
+  - notable
+  - fenomenal
+  - extraordinario
+  - impresionante
+
+locations:
+  - mercado
+  - tienda
+  - plataforma
+  - red
+  - canal
+  - ecosistema
+  - cuartel general
+  - oficina
+  - sala de exhibición
+  - evento
+  - escenario
+  - industria
+  - sector
+  - segmento
+  - dominio
+  - espacio
+  - territorio
+  - región
+  - asociación
+  - comunidad
+  - ecosistema
+  - paisaje
+  - arena
+  - horizonte
+
+characters:
+  - Jobs
+  - Musk
+  - Bezos
+  - Branson
+  - Gates
+  - Buffett
+  - Carnegie
+  - Rockefeller
+  - Ford
+  - Edison
+  - Getty
+  - Vanderbilt
+  - Oprah
+  - Ellen
+  - Tony
+  - Grant
+  - Steve
+  - Mark
+  - Sarah
+  - Jessica
+  - Amanda
+  - Alexandra
+  - Victoria
+  - Diana
+  - Robert
+  - Michael
+  - David
+  - James
+  - John
+  - Richard
+
+statements:
+  - Maximiza tu potencial hoy
+  - Transforma tu negocio ahora
+  - Desbloquea el crecimiento sin precedentes
+  - Experimenta la diferencia
+  - Logra más con menos
+  - Impulsa resultados inmediatos
+  - Entrega valor superior
+  - Supera todas las expectativas
+  - Revoluciona tu enfoque
+  - Acelera tu éxito
+  - Domina tu mercado
+  - Asegura tu futuro
