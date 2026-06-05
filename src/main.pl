@@ -16,8 +16,6 @@ current_seed(42).
 :- consult('src/config.pl').
 :- consult('src/random_utils.pl').
 :- consult('src/state.pl').
-:- consult('data/dict_en.pl').
-:- consult('data/dict_es.pl').
 :- consult('data/narratives.pl').
 
 % Load profile-specific dictionaries on startup

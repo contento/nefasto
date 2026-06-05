@@ -2,7 +2,7 @@
 :- encoding(utf8).
 
 % Select a random word from a category (profile-aware)
-% Try profile-specific word bank first, then fall back to generic
+% Profile-specific word banks only, no fallback
 random_select_word(Category, Lang, Word) :-
     current_profile(Profile),
     atom_concat(Lang, '_', LangProfilePrefix),
@@ -13,18 +13,10 @@ random_select_word(Category, Lang, Word) :-
     random_between(1, Len, Idx),
     nth1(Idx, Words, Word).
 
-% Fall back to generic language word bank if profile-specific not found
-random_select_word(Category, Lang, Word) :-
-    word_bank(Category, Lang, Words),
-    length(Words, Len),
-    Len > 0, !,
-    random_between(1, Len, Idx),
-    nth1(Idx, Words, Word).
-
 random_select_word(Category, Lang, default) :-
-    write('Warning: No words for category '),
-    write(Category), write(' and language '),
-    write(Lang), nl.
+    current_profile(Profile),
+    format('ERROR: No words for category "~w" in profile "~w" (language: ~w)~n', [Category, Profile, Lang]),
+    fail.
 
 % Select from a list with equal probability
 random_select([], default) :- !.
