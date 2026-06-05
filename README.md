@@ -71,6 +71,67 @@ swipl -l src/main.pl -- --lang es --seed 100
 - Fixed DCG subject tracking (subject carries through story)
 - Fixed CORS, server port, and critical type errors from code review
 
+## Discourse Profiles
+
+The generator supports multiple **discourse profiles** that change narrative voice and vocabulary. Each profile generates different prose from the same underlying structure.
+
+### Political Profile
+
+Argumentative, policy-focused, persuasive discourse with political vocabulary.
+
+```bash
+swipl -l src/main.pl -- --lang en --profile political --seed 42
+```
+
+**Sample outputs:**
+```text
+once act was in the tribunal . then act asserted the dispute . finally act contested .
+once republic was in the tribunal . then republic influenced the monarchy . finally republic campaigned .
+once rule was in the chamber . then rule betrayed the senator . finally rule switched .
+```
+
+**Vocabulary:** senator, parliament, legislation, debate, reform, decree, etc.
+
+### Sales Profile
+
+Action-oriented, benefit-focused, pitch-style discourse with business vocabulary.
+
+```bash
+swipl -l src/main.pl -- --lang en --profile sales --seed 42
+```
+
+**Sample outputs:**
+```text
+once credibility was in the office . then credibility persuaded the efficiency . finally credibility maximized .
+once scalability was in the network . then scalability revolutionized the agreement . finally scalability exceeded .
+once conversion was in the space . then conversion expanded the industry . finally conversion generated .
+```
+
+**Vocabulary:** product, solution, growth, innovation, ROI, synergy, etc.
+
+### Karen Profile
+
+Entitled, demanding, complaint-focused discourse with self-centered vocabulary.
+
+```bash
+swipl -l src/main.pl -- --lang en --profile karen --seed 42
+```
+
+**Sample outputs:**
+```text
+once compensation was in the Facebook . then compensation deserve the report . finally compensation reported .
+once status was in the restaurant . then status suggested the refund . finally status cautioned .
+once review was in the television . then review escalated the expectation . finally review cautioned .
+```
+
+**Vocabulary:** manager, complaint, unacceptable, refund, lawsuit, demand, etc.
+
+**See [PROFILES.md](PROFILES.md) for:**
+
+- All current profiles (political, sales, karen)
+- 10+ suggested profiles for future implementation
+- Implementation guide for adding new profiles
+
 ## Quick Start
 
 ### Two Interfaces
