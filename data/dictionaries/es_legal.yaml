@@ -1,0 +1,138 @@
+# Spanish Legal/Formal Profile Dictionary
+# Precise, technical jargon, adversarial discourse
+
+nouns:
+  - demandante
+  - demandado
+  - abogado
+  - fiscal
+  - juez
+  - jurado
+  - estatuto
+  - ley
+  - responsabilidad
+  - precedente
+  - caso
+  - demanda
+  - defensa
+  - evidencia
+  - testimonio
+  - testigo
+  - contrato
+  - acuerdo
+  - cláusula
+  - disposición
+  - jurisdicción
+  - tribunal
+  - juicio
+  - veredicto
+  - sentencia
+  - pena
+  - daños
+  - injunción
+  - apelación
+  - moción
+  - breve
+  - argumento
+  - fallo
+  - doctrina
+
+verbs:
+  - presentó
+  - testificó
+  - impugnó
+  - argumentó
+  - declaró
+  - alegó
+  - reclamó
+  - disputó
+  - apeló
+  - objetó
+  - sostuvo
+  - revocó
+  - devolvió
+  - condenó
+  - absolvió
+  - citó
+  - contra-examinó
+  - socavó
+  - estipuló
+  - concedió
+  - negó
+  - admitió
+  - contendió
+  - mantuvo
+  - afirmó
+  - discutió
+  - planteó
+
+adjectives:
+  - responsable
+  - negligente
+  - culpable
+  - inocente
+  - culpable
+  - competente
+  - incompetente
+  - admisible
+  - inadmisible
+  - relevante
+  - irrelevante
+  - vinculante
+  - nulo
+  - ejecutable
+  - inejecutables
+  - válido
+  - inválido
+  - fraudulento
+  - engañoso
+  - material
+  - inmaterial
+  - perjudicial
+  - probativo
+  - circunstancial
+  - directo
+  - indirecto
+  - razonable
+  - irrazonable
+
+locations:
+  - tribunal
+  - sala de audiencias
+  - palacio de justicia
+  - despacho
+  - sala
+  - banco de jurados
+  - tribuna
+  - oficina legal
+  - biblioteca legal
+  - cámara
+  - corte de apelaciones
+  - suprema corte
+  - corte de distrito
+  - jurisdicción
+  - fuero
+
+characters:
+  - Juez Thompson
+  - Abogado Smith
+  - Consejero Johnson
+  - Justicia Roberts
+  - Abogado Davis
+  - Procurador Miller
+  - Fiscal Williams
+  - Árbitro Brown
+  - Demandante
+  - Demandado
+
+statements:
+  - La ley establece
+  - Según el estatuto
+  - En esta jurisdicción
+  - La evidencia muestra
+  - El tribunal determina
+  - La defensa argumenta
+  - El demandante reclama
+  - El precedente establece
+  - La moción es denegada
+  - El veredicto se pronuncia

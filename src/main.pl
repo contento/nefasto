@@ -22,9 +22,15 @@ current_seed(42).
 :- load_dictionaries(en, political).
 :- load_dictionaries(en, sales).
 :- load_dictionaries(en, karen).
+:- load_dictionaries(en, academic).
+:- load_dictionaries(en, casual).
+:- load_dictionaries(en, legal).
 :- load_dictionaries(es, political).
 :- load_dictionaries(es, sales).
 :- load_dictionaries(es, karen).
+:- load_dictionaries(es, academic).
+:- load_dictionaries(es, casual).
+:- load_dictionaries(es, legal).
 
 main :-
     cli_args(Args),

@@ -1,0 +1,133 @@
+# Spanish Academic/Scholarly Profile Dictionary
+# Technical, formal, evidence-based discourse
+
+nouns:
+  - investigación
+  - metodología
+  - hipótesis
+  - paradigma
+  - marco
+  - análisis
+  - datos
+  - evidencia
+  - teoría
+  - modelo
+  - estudio
+  - experimento
+  - observación
+  - variable
+  - parámetro
+  - concepto
+  - fenómeno
+  - mecanismo
+  - proceso
+  - principio
+  - disciplina
+  - campo
+  - dominio
+  - literatura
+  - revisión
+  - publicación
+  - revista
+  - cita
+  - resumen
+  - conclusión
+  - hallazgo
+  - resultado
+
+verbs:
+  - investigó
+  - analizó
+  - examinó
+  - demostró
+  - estableció
+  - propuso
+  - desarrolló
+  - identificó
+  - documentó
+  - evaluó
+  - determinó
+  - midió
+  - probó
+  - validó
+  - verificó
+  - confirmó
+  - revisó
+  - criticó
+  - sintetizó
+  - conducción
+  - realizó
+  - comparó
+  - contrastó
+  - correlacionó
+  - hipotetizó
+  - observó
+  - formuló
+  - propuso
+
+adjectives:
+  - empírico
+  - teórico
+  - sistemático
+  - riguroso
+  - comprehensivo
+  - válido
+  - confiable
+  - significativo
+  - sustancial
+  - cuantitativo
+  - cualitativo
+  - metodológico
+  - analítico
+  - objetivo
+  - revisado
+  - basado
+  - reproducible
+  - coherente
+  - consistente
+  - problemático
+  - inconcluso
+  - preliminar
+  - longitudinal
+  - descriptivo
+  - explicativo
+  - predictivo
+
+locations:
+  - laboratorio
+  - centro
+  - universidad
+  - instituto
+  - academia
+  - biblioteca
+  - seminario
+  - conferencia
+  - revista
+  - archivo
+  - base de datos
+  - estudio
+  - aula
+  - salón de clases
+
+characters:
+  - investigador
+  - académico
+  - profesor
+  - científico
+  - experto
+  - analista
+  - Einstein
+  - Darwin
+  - Curie
+  - Newton
+  - Galileo
+
+statements:
+  - La evidencia sugiere
+  - La investigación indica
+  - Los estudios demuestran
+  - El análisis revela
+  - La teoría predice
+  - Los datos confirman
+  - El marco explica
+  - Los resultados apoyan

@@ -10,6 +10,9 @@ current_profile(political).
 profile(political, 'Political discourse - argumentative, persuasive, policy-focused').
 profile(sales, 'Sales pitch - action-oriented, benefit-focused, persuasive').
 profile(karen, 'Karen discourse - entitled, demanding, complaint-focused').
+profile(academic, 'Academic/scholarly - technical, formal, evidence-based').
+profile(casual, 'Casual/colloquial - friendly, informal, contemporary slang').
+profile(legal, 'Legal/formal - precise, technical jargon, adversarial').
 
 % Validate profile
 is_valid_profile(Profile) :-
@@ -22,7 +25,7 @@ set_profile(NewProfile) :-
     assertz(current_profile(NewProfile)).
 
 set_profile(Invalid) :-
-    format('ERROR: Unknown profile "~w". Valid profiles: political, sales, karen~n', [Invalid]),
+    format('ERROR: Unknown profile "~w". Valid profiles: political, sales, karen, academic, casual, legal~n', [Invalid]),
     fail.
 
 % Get current profile

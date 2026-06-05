@@ -1,0 +1,145 @@
+# English Legal/Formal Profile Dictionary
+# Precise, technical jargon, adversarial discourse
+
+nouns:
+  - plaintiff
+  - defendant
+  - counsel
+  - attorney
+  - judge
+  - jury
+  - statute
+  - statute
+  - statute
+  - liability
+  - precedent
+  - case
+  - lawsuit
+  - claim
+  - defense
+  - evidence
+  - testimony
+  - witness
+  - contract
+  - agreement
+  - clause
+  - provision
+  - jurisdiction
+  - court
+  - trial
+  - verdict
+  - sentence
+  - penalty
+  - damages
+  - injunction
+  - appeal
+  - motion
+  - brief
+  - argument
+  - ruling
+  - doctrine
+
+verbs:
+  - filed
+  - testified
+  - contested
+  - argued
+  - pleaded
+  - alleged
+  - claimed
+  - disputed
+  - appealed
+  - appealed
+  - appealed
+  - objected
+  - sustained
+  - overruled
+  - affirmed
+  - reversed
+  - remanded
+  - sentenced
+  - convicted
+  - acquitted
+  - subpoenaed
+  - cross-examined
+  - impeached
+  - stipulated
+  - conceded
+  - denied
+  - admitted
+  - alleged
+  - asserted
+  - contended
+  - maintained
+
+adjectives:
+  - liable
+  - negligent
+  - culpable
+  - guilty
+  - innocent
+  - competent
+  - incompetent
+  - admissible
+  - inadmissible
+  - relevant
+  - irrelevant
+  - binding
+  - void
+  - voidable
+  - enforceable
+  - unenforceable
+  - valid
+  - invalid
+  - fraudulent
+  - deceptive
+  - material
+  - immaterial
+  - prejudicial
+  - probative
+  - circumstantial
+  - direct
+  - indirect
+  - reasonable
+  - unreasonable
+
+locations:
+  - court
+  - courtroom
+  - courthouse
+  - chamber
+  - bench
+  - jury box
+  - witness stand
+  - law office
+  - law library
+  - chamber
+  - appeals court
+  - supreme court
+  - district court
+  - jurisdiction
+  - venue
+
+characters:
+  - Judge Thompson
+  - Attorney Smith
+  - Counselor Johnson
+  - Justice Roberts
+  - Advocate Davis
+  - Solicitor Miller
+  - Barrister Williams
+  - Arbitrator Brown
+  - Plaintiff
+  - Defendant
+
+statements:
+  - The law provides
+  - According to statute
+  - In this jurisdiction
+  - The evidence shows
+  - The court finds
+  - Defense counsel argues
+  - The plaintiff claims
+  - Precedent establishes
+  - The motion is denied
+  - The verdict is rendered
