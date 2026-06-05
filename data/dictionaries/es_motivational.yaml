@@ -1,7 +1,134 @@
-# Spanish version - minimal but complete
-nouns: [cosa, palabra, momento, tiempo, lugar, persona, gente, aspecto, idea, concepto, elemento, parte, todo]
-verbs: [fue, pasó, sucedió, ocurrió, aconteció, realizó, llevó, trajo, consiguió, alcanzó, logró]
-adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, peor, diferente, especial]
-locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
-characters: [persona, individuo, ser, actor, protagonista, figura]
-statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]
+# Spanish Motivational Speaker Profile
+# Inspirational, action-oriented, empowering
+
+nouns:
+  - sueño
+  - meta
+  - éxito
+  - energía
+  - pasión
+  - coraje
+  - victoria
+  - fuerza
+  - poder
+  - corazón
+  - alma
+  - camino
+  - viaje
+  - cambio
+  - futuro
+  - esperanza
+  - fe
+  - vida
+  - espíritu
+  - acción
+  - determinación
+  - resiliencia
+  - crecimiento
+  - transformación
+  - propósito
+  - visión
+  - impacto
+  - legado
+  - fuego
+  - voluntad
+  - mente
+  - triunfo
+  - libertad
+  - destino
+  - disciplina
+  - superación
+
+verbs:
+  - conquistó
+  - transformó
+  - inspiró
+  - logró
+  - superó
+  - descubrió
+  - construyó
+  - lideró
+  - luchó
+  - lanzó
+  - encendió
+  - alcanzó
+  - liberó
+  - persiguió
+  - creó
+  - despertó
+  - osó
+  - venció
+  - se levantó
+  - escaló
+  - empujó
+  - brilló
+  - forjó
+  - impulsó
+  - desafió
+
+adjectives:
+  - imparable
+  - poderoso
+  - extraordinario
+  - valiente
+  - incansable
+  - intrépido
+  - magnífico
+  - triunfante
+  - invencible
+  - radiante
+  - apasionado
+  - infatigable
+  - inspirado
+  - ilimitado
+  - audaz
+  - resiliente
+  - feroz
+  - indomable
+  - genuino
+  - transformador
+
+locations:
+  - escenario
+  - gimnasio
+  - universidad
+  - empresa
+  - montaña
+  - playa
+  - parque
+  - aula
+  - auditorio
+  - oficina
+  - estadio
+  - arena
+
+characters:
+  - Alejandro
+  - Victoria
+  - Andrés
+  - Lucía
+  - Carlos
+  - Sofía
+  - Miguel
+  - Camila
+  - Diego
+  - Valentina
+  - Rafael
+  - Isabella
+
+statements_es:
+  - El éxito comienza con la decisión de intentarlo
+  - Nunca es tarde para empezar de nuevo
+  - Cada día es una nueva oportunidad
+  - El único fracaso es no intentarlo
+  - Tu potencial es ilimitado
+  - Cree en ti y todo será posible
+  - La disciplina supera al talento
+  - Hoy es el día para actuar
+  - No esperes el momento perfecto, toma el momento
+  - Tu única competencia eres tú mismo
+
+features:
+  - empoderamiento
+  - resiliencia
+  - propósito

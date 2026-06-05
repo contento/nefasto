@@ -1,7 +1,120 @@
 # English Motivational Speaker Profile
-nouns: [dream, passion, goal, potential, breakthrough, success, achievement, victory, triumph, power, energy, momentum, inspiration, transformation, growth, vision, purpose]
-verbs: [inspired, empowered, transformed, awakened, unleashed, conquered, achieved, overcame, succeeded, thrived, flourished]
-adjectives: [unstoppable, limitless, powerful, extraordinary, phenomenal, victorious, accomplished, inspired, capable, determined]
-locations: [stage, arena, platform, podium, spotlight]
-characters: [leader, champion, innovator, visionary, hero]
-statements: [You can do it, Believe in yourself, Anything is possible, Never give up, You are powerful]
+# Inspirational, action-oriented, empowering
+
+nouns:
+  - dream
+  - passion
+  - goal
+  - potential
+  - breakthrough
+  - success
+  - achievement
+  - victory
+  - triumph
+  - power
+  - energy
+  - momentum
+  - inspiration
+  - transformation
+  - growth
+  - vision
+  - purpose
+  - resilience
+  - courage
+  - determination
+  - greatness
+  - mastery
+  - legacy
+  - abundance
+  - opportunity
+  - progress
+  - commitment
+  - discipline
+  - mindset
+  - foundation
+  - summit
+  - journey
+
+verbs:
+  - inspired
+  - empowered
+  - transformed
+  - awakened
+  - unleashed
+  - conquered
+  - achieved
+  - overcame
+  - succeeded
+  - thrived
+  - flourished
+  - persevered
+  - soared
+  - ignited
+  - elevated
+  - transcended
+  - mobilized
+  - championed
+  - surpassed
+  - prevailed
+
+adjectives:
+  - unstoppable
+  - limitless
+  - powerful
+  - extraordinary
+  - phenomenal
+  - victorious
+  - accomplished
+  - inspired
+  - capable
+  - determined
+  - fearless
+  - relentless
+  - resilient
+  - passionate
+  - bold
+  - courageous
+
+locations:
+  - stage
+  - arena
+  - platform
+  - podium
+  - spotlight
+  - summit
+  - conference
+  - auditorium
+  - convention
+  - rally
+  - gymnasium
+  - field
+
+characters:
+  - champion
+  - leader
+  - visionary
+  - pioneer
+  - trailblazer
+  - innovator
+  - hero
+  - warrior
+  - catalyst
+  - mentor
+
+
+statements_en:
+  - Your potential is unlimited
+  - Success starts with believing
+  - Every setback is a setup for a comeback
+  - You were born to win
+  - The only limit is your mind
+  - Turn your dreams into plans
+  - Action beats intention every time
+  - You are stronger than you think
+  - Keep moving forward no matter what
+  - Today is the day to start
+
+features:
+  - empowerment
+  - resilience
+  - purpose

@@ -122,22 +122,12 @@ characters:
   - Newton
   - Galileo
 
-statements:
-  - La evidencia sugiere
-  - La investigación indica
-  - Los estudios demuestran
-  - El análisis revela
-  - La teoría predice
-  - Los datos confirman
-  - El marco explica
-  - Los resultados apoyan
-
 statements_es:
   - Esto es importante
   - Considera las implicaciones
   - Toma tu propia decisión
 
 features:
-  - aspect
-  - quality
-  - property
+  - validez
+  - significado
+  - novedad

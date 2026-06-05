@@ -1,7 +1,137 @@
-# Spanish version - minimal but complete
-nouns: [cosa, palabra, momento, tiempo, lugar, persona, gente, aspecto, idea, concepto, elemento, parte, todo]
-verbs: [fue, pasó, sucedió, ocurrió, aconteció, realizó, llevó, trajo, consiguió, alcanzó, logró]
-adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, peor, diferente, especial]
-locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
-characters: [persona, individuo, ser, actor, protagonista, figura]
-statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]
+# Spanish Technical/Engineering Profile
+# Precise, systematic, optimization-focused discourse
+
+nouns:
+  - algoritmo
+  - optimización
+  - rendimiento
+  - parámetro
+  - infraestructura
+  - sistema
+  - arquitectura
+  - módulo
+  - componente
+  - proceso
+  - flujo
+  - protocolo
+  - interfaz
+  - marco
+  - mecanismo
+  - especificación
+  - implementación
+  - despliegue
+  - latencia
+  - caché
+  - servidor
+  - clúster
+  - índice
+  - diagrama
+  - simulación
+  - compilación
+  - depuración
+  - análisis
+  - verificación
+  - integración
+  - redundancia
+  - desbordamiento
+  - registro
+  - patrón
+  - abstracción
+  - resolución
+  - capa
+  - bucle
+
+verbs:
+  - optimizó
+  - implementó
+  - desplegó
+  - escaló
+  - configuró
+  - diseñó
+  - ejecutó
+  - procesó
+  - compiló
+  - depuró
+  - perfiló
+  - analizó
+  - refactorizó
+  - verificó
+  - validó
+  - midió
+  - integró
+  - probó
+  - migró
+  - actualizó
+  - encapsuló
+  - sincronizó
+  - desacopló
+
+adjectives:
+  - eficiente
+  - robusto
+  - escalable
+  - determinista
+  - confiable
+  - redundante
+  - modular
+  - distribuido
+  - asíncrono
+  - síncrono
+  - óptimo
+  - mínimo
+  - máximo
+  - tolerante
+  - preciso
+  - complejo
+  - trivial
+  - idóneo
+
+locations:
+  - servidor
+  - clúster
+  - laboratorio
+  - taller
+  - terminal
+  - panel
+  - entorno
+  - rack
+  - puerto
+  - procesador
+  - disco
+  - núcleo
+
+characters:
+  - Ada
+  - Turing
+  - Babbage
+  - Torvalds
+  - Knuth
+  - Dijkstra
+  - Hopper
+  - Ritchie
+  - Kay
+  - Thompson
+  - McCarthy
+  - Backus
+  - Shannon
+  - Kirchhoff
+  - Pascal
+
+statements_es:
+  - La optimización es el camino hacia la eficiencia
+  - El sistema requiere una arquitectura robusta
+  - El rendimiento depende del algoritmo elegido
+  - La escalabilidad define el éxito del proyecto
+  - El debug es arte y ciencia a la vez
+  - Todo componente debe ser verificado
+  - El código limpio es código mantenible
+  - La infraestructura soporta la innovación
+  - El parámetro correcto cambia el resultado
+  - La implementación requiere planificación rigurosa
+  - El despliegue exitoso confirma el diseño
+  - El patrón correcto resuelve el problema
+
+features:
+  - latencia
+  - rendimiento
+  - modularidad

@@ -20,7 +20,7 @@ nouns:
   - statement
   - incident
   - event
-  - incident
+  - revelation
   - breaking news
   - update
   - confirmation
@@ -52,7 +52,7 @@ verbs:
   - documented
   - covered
   - broke
-  - covered
+  - dispatched
   - sourced
   - cited
   - quoted
@@ -87,7 +87,7 @@ adjectives:
   - firsthand
   - secondhand
   - eyewitness
-  - anonymous
+  - unverified
   - attributed
   - unattributed
 
@@ -117,24 +117,12 @@ characters:
   - spokesperson
   - commentator
 
-statements:
-  - According to sources
-  - On the record
-  - Off the record
-  - Breaking news
-  - Developing story
-  - Confirmed reports
-  - Unnamed sources
-  - Official statement
-  - No comment
-  - Statement pending
-
 statements_en:
   - This is important
   - Consider the implications
   - Make your own decision
 
 features:
-  - aspect
-  - quality
-  - property
+  - credibility
+  - attribution
+  - impact

@@ -1,7 +1,135 @@
-# English Conspiracy Theorist Profile
-nouns: [coverup, truth, evidence, questions, patterns, connection, suppression, revelation, exposé, whistleblower, proof, secret, fact, hidden agenda, conspiracy]
-verbs: [discovered, revealed, exposed, suppressed, covered up, questioned, connected, investigated, uncovered, warned, exposed]
-adjectives: [suspicious, hidden, secret, forbidden, suppressed, obvious, questionable, dubious, curious, strange]
-locations: [underground, shadow government, headquarters, secret meetings, back alleys]
-characters: [whistleblower, investigator, truth-seeker, source, insider]
-statements: [Wake up, Do your research, It all connects, The truth is, Connect the dots]
+# English Conspiracy Theorist Profile Dictionary
+# Suspicious, connecting dots, paranoid, uncovering hidden truths
+
+nouns:
+  - coverup
+  - truth
+  - evidence
+  - questions
+  - patterns
+  - connection
+  - suppression
+  - revelation
+  - whistleblower
+  - proof
+  - secret
+  - fact
+  - agenda
+  - conspiracy
+  - surveillance
+  - manipulation
+  - cover-up
+  - informant
+  - dossier
+  - intercept
+  - propaganda
+  - misinformation
+  - disinformation
+  - censorship
+  - deep state
+  - black ops
+  - psyop
+  - redacted
+  - leak
+  - exposé
+  - indictment
+  - classified
+  - operation
+  - narrative
+  - cover story
+
+verbs:
+  - discovered
+  - revealed
+  - exposed
+  - suppressed
+  - covered up
+  - questioned
+  - connected
+  - investigated
+  - uncovered
+  - warned
+  - linked
+  - traced
+  - followed
+  - tracked
+  - monitored
+  - infiltrated
+  - intercepted
+  - decoded
+  - unmasked
+  - debunked
+  - discredited
+  - silenced
+  - threatened
+  - intimidated
+  - documented
+  - verified
+
+adjectives:
+  - suspicious
+  - hidden
+  - secret
+  - forbidden
+  - suppressed
+  - obvious
+  - questionable
+  - dubious
+  - curious
+  - strange
+  - classified
+  - redacted
+  - covert
+  - clandestine
+  - underground
+  - shadowy
+  - murky
+  - sinister
+  - ominous
+  - unquestionable
+
+locations:
+  - underground bunker
+  - shadow government
+  - secret meeting
+  - back alley
+  - hidden lab
+  - classified facility
+  - remote compound
+  - government office
+  - abandoned warehouse
+  - dark web
+  - bunker
+  - vault
+  - safe house
+
+characters:
+  - whistleblower
+  - investigator
+  - truth-seeker
+  - source
+  - insider
+  - analyst
+  - operative
+  - agent
+  - researcher
+  - journalist
+
+statements_en:
+  - Wake up
+  - Do your research
+  - It all connects
+  - The truth is out there
+  - Connect the dots
+  - Follow the money
+  - They don't want you to know
+  - Open your eyes
+  - Question everything
+  - The evidence is clear
+  - Think for yourself
+  - The official story doesn't add up
+
+features:
+  - coverup
+  - surveillance
+  - suppression

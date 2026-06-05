@@ -9,8 +9,6 @@ nouns:
   - judge
   - jury
   - statute
-  - statute
-  - statute
   - liability
   - precedent
   - case
@@ -49,8 +47,6 @@ verbs:
   - claimed
   - disputed
   - appealed
-  - appealed
-  - appealed
   - objected
   - sustained
   - overruled
@@ -67,7 +63,6 @@ verbs:
   - conceded
   - denied
   - admitted
-  - alleged
   - asserted
   - contended
   - maintained
@@ -109,7 +104,6 @@ locations:
   - courthouse
   - chamber
   - bench
-  - chamber
   - supreme court
   - jurisdiction
   - venue
@@ -126,24 +120,12 @@ characters:
   - Plaintiff
   - Defendant
 
-statements:
-  - The law provides
-  - According to statute
-  - In this jurisdiction
-  - The evidence shows
-  - The court finds
-  - Defense counsel argues
-  - The plaintiff claims
-  - Precedent establishes
-  - The motion is denied
-  - The verdict is rendered
-
 statements_en:
   - This is important
   - Consider the implications
   - Make your own decision
 
 features:
-  - aspect
-  - quality
-  - property
+  - precedent
+  - liability
+  - jurisdiction

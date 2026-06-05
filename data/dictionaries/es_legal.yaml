@@ -71,7 +71,7 @@ adjectives:
   - negligente
   - culpable
   - inocente
-  - culpable
+  - penitenciario
   - competente
   - incompetente
   - admisible
@@ -125,24 +125,12 @@ characters:
   - Demandante
   - Demandado
 
-statements:
-  - La ley establece
-  - Según el estatuto
-  - En esta jurisdicción
-  - La evidencia muestra
-  - El tribunal determina
-  - La defensa argumenta
-  - El demandante reclama
-  - El precedente establece
-  - La moción es denegada
-  - El veredicto se pronuncia
-
 statements_es:
   - Esto es importante
   - Considera las implicaciones
   - Toma tu propia decisión
 
 features:
-  - aspect
-  - quality
-  - property
+  - precedente
+  - responsabilidad
+  - jurisdicción

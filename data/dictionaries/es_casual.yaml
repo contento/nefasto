@@ -77,7 +77,7 @@ adjectives:
   - loco
   - insano
   - hilarante
-  - divertido
+  - gracioso
   - raro
   - extraño
   - aleatorio
@@ -86,7 +86,7 @@ adjectives:
   - legítimo
   - sólido
   - épico
-  - salvaje
+  - brutal
   - despiadado
 
 locations:
@@ -120,24 +120,12 @@ characters:
   - Dakota
   - Parker
 
-statements:
-  - Básicamente lo que pasó
-  - Como que no puede ser
-  - Eso fue genial
-  - Bastante bueno verdad
-  - Solo relajándome
-  - Viviendo mi mejor vida
-  - Sin presión
-  - Pura buena onda
-  - Pasándola bien
-  - Mejor día del mundo
-
 statements_es:
   - Esto es importante
   - Considera las implicaciones
   - Toma tu propia decisión
 
 features:
-  - aspect
-  - quality
-  - property
+  - ambiente
+  - energía
+  - impulso

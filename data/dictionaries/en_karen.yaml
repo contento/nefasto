@@ -31,12 +31,10 @@ nouns:
   - consequence
   - lawsuit
   - report
-  - corporate
-  - headquarters
+  - corporation
+  - network
   - lawyer
   - review
-  - Facebook
-  - Yelp
   - reputation
   - status
   - importance
@@ -142,7 +140,6 @@ adjectives:
   - embarrassing
 
 locations:
-  - manager
   - office
   - store
   - restaurant
@@ -159,7 +156,7 @@ locations:
   - newspaper
   - online
   - everywhere
-  - public
+  - community center
   - community
   - neighborhood
   - HOA
@@ -204,6 +201,6 @@ statements_en:
   - You will regret this
 
 features:
-  - aspect
-  - quality
-  - property
+  - entitlement
+  - privilege
+  - retribution

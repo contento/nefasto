@@ -1,17 +1,164 @@
-# Spanish version - minimal but complete
-nouns: [cosa, palabra, momento, tiempo, lugar, persona, gente, aspecto, idea, concepto, elemento, parte, todo]
-verbs: [fue, pasó, sucedió, ocurrió, aconteció, realizó, llevó, trajo, consiguió, alcanzó, logró]
-adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, peor, diferente, especial]
-locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
-characters: [persona, individuo, ser, actor, protagonista, figura]
-statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]
+# Spanish Poetic/Lyrical Profile Dictionary
+# Metaphorical, artistic, evocative, emotional discourse
+
+nouns:
+  - alma
+  - poema
+  - luz
+  - sombra
+  - estrella
+  - luna
+  - sol
+  - mar
+  - viento
+  - fuego
+  - agua
+  - flor
+  - rosa
+  - canción
+  - verso
+  - rima
+  - sueño
+  - recuerdo
+  - deseo
+  - pasión
+  - tristeza
+  - esperanza
+  - miedo
+  - silencio
+  - noche
+  - aurora
+  - horizonte
+  - cielo
+  - tierra
+  - corazón
+  - lágrima
+  - beso
+  - camino
+  - hoja
+  - raíz
+  - semilla
+  - cristal
+  - llama
+  - ceniza
+  - abismo
+  - espejo
+  - nube
+  - olvido
+  - eternidad
+
+verbs:
+  - escribió
+  - cantó
+  - voló
+  - brilló
+  - floreció
+  - iluminó
+  - susurró
+  - soñó
+  - lloró
+  - ardió
+  - tembló
+  - besó
+  - danzó
+  - encendió
+  - cayó
+  - abrió
+  - cerró
+  - nació
+  - murió
+  - transformó
+  - evocó
+  - invocó
+  - tejió
+  - bordó
+  - esculpió
+  - pinceló
+  - declamó
+  - meditó
+  - contempló
+  - suspiró
+  - renació
+
+adjectives:
+  - frágil
+  - eterno
+  - luminoso
+  - silente
+  - infinito
+  - profundo
+  - hermoso
+  - triste
+  - intenso
+  - puro
+  - dulce
+  - amargo
+  - efímero
+  - solemne
+  - misterioso
+  - radiante
+  - velado
+  - sublime
+  - melancólico
+  - ardiente
+  - sereno
+  - austero
+  - diáfano
+  - opaco
+  - desolado
+  - etéreo
+
+locations:
+  - bosque
+  - cielo
+  - mar
+  - jardín
+  - ruinas
+  - fuente
+  - atelier
+  - mirador
+  - playa
+  - colina
+  - aurora
+  - noche
+  - llanura
+  - umbral
+  - cuesta
+  - aldea
+  - frontera
+  - plaza
+
+characters:
+  - Elena
+  - Federico
+  - Lucía
+  - Martín
+  - Isabel
+  - Ramón
+  - Valentina
+  - Dante
+  - Aurora
+  - Lope
+  - Rosalía
+  - César
+  - Camila
+  - León
+  - Alma
+
 
 statements_es:
-  - Esto es importante
-  - Considera las implicaciones
-  - Toma tu propia decisión
+  - El alma es un poema que el viento escribió
+  - Las estrellas lloran luz sobre la tierra dormida
+  - Cada noche una canción renace en el silencio
+  - El mar guarda los secretos que el cielo olvidó
+  - La belleza vive en las grietas del tiempo
+  - El fuego del deseo nunca conoce el invierno
+  - Las palabras son semillas que florecen en el alma
+  - El horizonte es una promesa que la aurora cumple
+  - En la sombra del recuerdo late la eternidad
+  - La poesía es el puente entre el miedo y la esperanza
 
 features:
-  - aspect
-  - quality
-  - property
+  - atmósfera
+  - ritmo
+  - resonancia

@@ -75,15 +75,15 @@ adjectives:
   - vanguardista
   - revolucionario
   - galardonado
-  - líder del mercado
-  - de clase mundial
-  - de clase superior
+  - preponderante
+  - excelente
+  - superior
   - incomparable
   - imbatible
-  - superior
+  - óptimo
   - eficiente
   - efectivo
-  - confiable
+  - solvente
   - dependable
   - destacado
   - excepcional
@@ -113,7 +113,7 @@ locations:
   - región
   - asociación
   - comunidad
-  - ecosistema
+  - alcance
   - paisaje
   - arena
   - horizonte
@@ -150,26 +150,12 @@ characters:
   - John
   - Richard
 
-statements:
-  - Maximiza tu potencial hoy
-  - Transforma tu negocio ahora
-  - Desbloquea el crecimiento sin precedentes
-  - Experimenta la diferencia
-  - Logra más con menos
-  - Impulsa resultados inmediatos
-  - Entrega valor superior
-  - Supera todas las expectativas
-  - Revoluciona tu enfoque
-  - Acelera tu éxito
-  - Domina tu mercado
-  - Asegura tu futuro
-
 statements_es:
   - Esto es importante
   - Considera las implicaciones
   - Toma tu propia decisión
 
 features:
-  - aspect
-  - quality
-  - property
+  - rentabilidad
+  - escalabilidad
+  - diferenciación

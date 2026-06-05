@@ -1,7 +1,153 @@
-# English Passive-Aggressive Profile
-nouns: [sarcasm, comment, remark, tone, intention, gesture, behavior, attitude, observation]
-verbs: [suggested, implied, hinted, commented, remarked, supposed, pretended, acted, claimed]
-adjectives: [fine, nice, interesting, lovely, wonderful, clever, charming, sweet, delightful]
-locations: [conversation, meeting, gathering, social event]
-characters: [observer, critic, skeptic, commentator]
-statements: [That is nice, Sure whatever, Oh absolutely, How interesting, Well good luck]
+# English Passive-Aggressive Profile Dictionary
+# Sarcastic, backhanded, subtly hostile, veiled hostility with a smile
+
+nouns:
+  - compliment
+  - comment
+  - remark
+  - tone
+  - intention
+  - gesture
+  - behavior
+  - attitude
+  - observation
+  - suggestion
+  - feedback
+  - opinion
+  - perspective
+  - note
+  - reminder
+  - effort
+  - attempt
+  - contribution
+  - understanding
+  - patience
+  - tolerance
+  - sympathy
+  - concern
+  - preference
+  - priority
+  - standard
+  - expectation
+  - responsibility
+  - choice
+  - consequence
+  - result
+  - outcome
+  - level
+  - vibe
+  - energy
+  - moment
+
+verbs:
+  - suggested
+  - implied
+  - hinted
+  - commented
+  - remarked
+  - supposed
+  - pretended
+  - acted
+  - claimed
+  - assumed
+  - noted
+  - observed
+  - mentioned
+  - appreciated
+  - acknowledged
+  - recognized
+  - respected
+  - admired
+  - enjoyed
+  - valued
+  - trusted
+  - wondered
+  - questioned
+  - doubted
+  - shrugged
+  - smirked
+  - paused
+
+adjectives:
+  - fine
+  - nice
+  - interesting
+  - lovely
+  - wonderful
+  - clever
+  - charming
+  - sweet
+  - delightful
+  - adorable
+  - brave
+  - bold
+  - special
+  - unique
+  - impressive
+  - ambitious
+  - confident
+  - thoughtful
+  - refreshing
+  - mature
+  - cute
+  - convenient
+  - pleasant
+  - generous
+  - patient
+  - considerate
+
+locations:
+  - office
+  - meeting room
+  - kitchen
+  - break room
+  - elevator
+  - hallway
+  - parking lot
+  - reception
+  - conference table
+  - open floor plan
+  - group chat
+  - email thread
+
+characters:
+  - colleague
+  - coworker
+  - neighbor
+  - acquaintance
+  - roommate
+  - sibling
+  - in-law
+  - parent
+  - partner
+  - friend
+  - boss
+  - manager
+  - customer
+  - client
+
+statements_en:
+  - Well that is certainly a choice
+  - I am sure you did your best
+  - No worries I guess
+  - That is one way to do it
+  - How interesting
+  - I am not mad just disappointed
+  - Oh I did not realize you were busy
+  - Must be nice
+  - I mean if that works for you
+  - Good for you
+  - Sure whatever you say
+  - I just find it fascinating
+  - Well I would never do that but okay
+  - Bless your heart
+  - That must be so hard for you
+  - Oh you actually did that
+  - I mean I would not have but okay
+  - Sounds like a personal problem
+  - Noted
+
+features:
+  - subtext
+  - implication
+  - tone

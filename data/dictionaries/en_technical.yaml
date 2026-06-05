@@ -1,7 +1,113 @@
-# English Technical/Engineering Profile
-nouns: [algorithm, optimization, performance, parameter, infrastructure, system, architecture, module, component, process, flow, pipeline, protocol, interface, layer, framework, mechanism, specification, implementation, deployment, scaling, throughput, latency, bandwidth, framework, cache, server, cluster, database, index]
-verbs: [implemented, optimized, deployed, scaled, configured, engineered, architected, designed, executed, processed, computed, compiled, debugged, profiled, benchmarked, analyzed, refactored, partitioned]
-adjectives: [efficient, robust, scalable, deterministic, reliable, redundant, modular, distributed, asynchronous, synchronous, optimal, minimal, maximal, performance-critical, fault-tolerant]
-locations: [server, cluster, data center, production, staging, environment, cloud]
-characters: [engineer, architect, developer, systems administrator, technician]
-statements: [Performance optimized, Scalable design, Reliable implementation, Efficient processing]
+# English Technical/Engineering Profile Dictionary
+# Systems-oriented, precision language, engineering discourse
+
+nouns:
+  - algorithm
+  - optimization
+  - performance
+  - parameter
+  - infrastructure
+  - system
+  - architecture
+  - module
+  - component
+  - process
+  - flow
+  - pipeline
+  - protocol
+  - interface
+  - layer
+  - framework
+  - mechanism
+  - specification
+  - implementation
+  - deployment
+  - scaling
+  - throughput
+  - latency
+  - bandwidth
+  - cache
+  - server
+  - cluster
+  - database
+  - index
+  - repository
+
+verbs:
+  - implemented
+  - optimized
+  - deployed
+  - scaled
+  - configured
+  - engineered
+  - architected
+  - designed
+  - executed
+  - processed
+  - computed
+  - compiled
+  - debugged
+  - profiled
+  - benchmarked
+  - analyzed
+  - refactored
+  - partitioned
+  - validated
+  - integrated
+
+adjectives:
+  - efficient
+  - robust
+  - scalable
+  - deterministic
+  - reliable
+  - redundant
+  - modular
+  - distributed
+  - asynchronous
+  - synchronous
+  - optimal
+  - minimal
+  - maximal
+  - performance-critical
+  - fault-tolerant
+
+locations:
+  - server
+  - cluster
+  - data center
+  - production
+  - staging
+  - environment
+  - cloud
+  - repository
+  - terminal
+  - dashboard
+
+characters:
+  - engineer
+  - architect
+  - developer
+  - systems administrator
+  - technician
+  - DevOps engineer
+  - SRE
+  - platform engineer
+  - backend developer
+  - data engineer
+
+
+statements_en:
+  - The system is performing well
+  - We need to scale the infrastructure
+  - The deployment is complete
+  - This requires careful analysis
+  - The architecture is sound
+  - We should optimize the pipeline
+  - The implementation is production-ready
+  - Consider the performance implications
+
+features:
+  - latency
+  - throughput
+  - modularity

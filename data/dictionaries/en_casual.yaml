@@ -132,24 +132,12 @@ characters:
   - Dakota
   - Parker
 
-statements:
-  - So basically what happened was
-  - Like totally no way
-  - That was awesome
-  - Pretty cool right
-  - Just hanging out
-  - Living my best life
-  - No pressure
-  - All good vibes
-  - Having a blast
-  - Best day ever
-
 statements_en:
   - This is important
   - Consider the implications
   - Make your own decision
 
 features:
-  - aspect
-  - quality
-  - property
+  - vibe
+  - energy
+  - momentum

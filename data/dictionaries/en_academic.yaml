@@ -63,7 +63,7 @@ verbs:
   - reviewed
   - critiqued
   - contextualized
-  - examined
+  - interrogated
   - scrutinized
   - conducted
   - performed
@@ -93,13 +93,13 @@ adjectives:
   - replicable
   - coherent
   - consistent
-  - valid
+  - tenable
   - problematic
   - inconclusive
   - preliminary
   - longitudinal
   - cross-sectional
-  - longitudinal
+  - iterative
   - descriptive
   - explanatory
   - predictive
@@ -136,24 +136,12 @@ characters:
   - Newton
   - Galileo
 
-statements:
-  - The evidence suggests
-  - Research indicates
-  - Studies demonstrate
-  - Analysis reveals
-  - Theory predicts
-  - Data confirms
-  - Framework explains
-  - Methodology enables
-  - Results support
-  - Findings indicate
-
 statements_en:
   - This is important
   - Consider the implications
   - Make your own decision
 
 features:
-  - aspect
-  - quality
-  - property
+  - validity
+  - significance
+  - novelty

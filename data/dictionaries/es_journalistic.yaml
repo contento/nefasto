@@ -82,18 +82,12 @@ characters:
   - oficial
   - portavoz
 
-statements:
-  - Según fuentes
-  - Declaración oficial
-  - Sin comentarios
-  - Declaración pendiente
-
 statements_es:
   - Esto es importante
   - Considera las implicaciones
   - Toma tu propia decisión
 
 features:
-  - aspect
-  - quality
-  - property
+  - credibilidad
+  - atribución
+  - impacto

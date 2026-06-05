@@ -31,17 +31,17 @@ nouns:
   - consecuencia
   - demanda
   - informe
-  - sede corporativa
+  - corporación
   - abogado
   - reseña
-  - redes sociales
+  - viralidad
   - Facebook
   - reputación
   - estatus
   - importancia
   - privilegio
   - derechos
-  - demanda
+  - querella
   - ultimátum
   - amenaza
   - impuestos
@@ -136,14 +136,14 @@ locations:
   - redes sociales
   - Facebook
   - Google
-  - sede corporativa
-  - oficina de abogado
+  - sede
+  - bufete
   - juzgado
   - medios
   - televisión
   - radio
   - periódico
-  - en línea
+  - online
   - comunidad
   - vecindario
 
@@ -169,30 +169,12 @@ characters:
   - Débora
   - Catalina
 
-statements:
-  - Quiero hablar con el gerente
-  - Esto es completamente inaceptable
-  - Pago mis impuestos
-  - Tengo derechos
-  - Sabe quién soy
-  - Dejaré una reseña de una estrella
-  - Esto será viral en redes sociales
-  - Mi abogado sabrá de esto
-  - Esto es discriminación
-  - Mis hijos vieron esto
-  - Estoy profundamente ofendido
-  - Este es el peor servicio jamás
-  - Nunca he sido tratado así
-  - Exijo un reembolso
-  - Exijo compensación
-  - Se arrepentirá de esto
-
 statements_es:
   - Esto es importante
   - Considera las implicaciones
   - Toma tu propia decisión
 
 features:
-  - aspect
-  - quality
-  - property
+  - privilegio
+  - represalia
+  - exención

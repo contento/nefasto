@@ -127,7 +127,10 @@ spanish_article(Loc, la) :-
         'sala de audiencias', 'cámara', 'jurisdicción', 'corte de apelaciones',
         'suprema corte', 'corte de distrito', 'sala', 'tribuna', 'oficina legal',
         'biblioteca legal', 'región', 'convención', 'plaza', 'casa', 'ciudad',
-        'puerta', 'ventana', 'mesa', 'silla', 'avenida', 'calle'
+        'puerta', 'ventana', 'mesa', 'silla', 'avenida', 'calle',
+        'aurora', 'noche', 'cuesta', 'fuente', 'aldea', 'frontera',
+        'llanura', 'umbral', 'colina',
+        'cocina', 'sala de estar', 'escalera', 'terraza', 'oficina'
     ]), !.
 spanish_article(_, el).
 

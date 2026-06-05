@@ -1,7 +1,133 @@
-# Spanish version - minimal but complete
-nouns: [cosa, palabra, momento, tiempo, lugar, persona, gente, aspecto, idea, concepto, elemento, parte, todo]
-verbs: [fue, pasó, sucedió, ocurrió, aconteció, realizó, llevó, trajo, consiguió, alcanzó, logró]
-adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, peor, diferente, especial]
-locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
-characters: [persona, individuo, ser, actor, protagonista, figura]
-statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]
+# Spanish Conspiracy Theorist Profile
+# Suspicious, connecting dots, paranoid
+
+nouns:
+  - complot
+  - secreto
+  - verdad
+  - evidencia
+  - prueba
+  - pregunta
+  - patrón
+  - conexión
+  - encubrimiento
+  - revelación
+  - denuncia
+  - conspiración
+  - documento
+  - archivo
+  - filtración
+  - informante
+  - fuente
+  - simulacro
+  - trama
+  - manipulación
+  - control
+  - poder
+  - gobierno
+  - corporación
+  - agencia
+  - laboratorio
+  - satélite
+  - señal
+  - hipótesis
+  - teoría
+  - investigación
+  - información
+  - cobertura
+  - operación
+  - indicio
+  - sospecha
+  - agenda
+
+verbs:
+  - descubrió
+  - reveló
+  - expuso
+  - encubrió
+  - filtró
+  - investigó
+  - conectó
+  - advertió
+  - denunció
+  - suprimió
+  - censuró
+  - manipuló
+  - controló
+  - planificó
+  - organizó
+  - ejecutó
+  - documentó
+  - verificó
+  - rastreó
+  - interceptó
+  - monitoreó
+  - vigiló
+  - obtuvo
+  - desenmascaró
+
+adjectives:
+  - sospechoso
+  - oculto
+  - prohibido
+  - suprimido
+  - obvio
+  - cuestionable
+  - dudoso
+  - curioso
+  - extraño
+  - conspiranoico
+  - encubierto
+  - clandestino
+  - subterráneo
+  - turbio
+  - enigmático
+
+locations:
+  - sótano
+  - búnker
+  - refugio
+  - laboratorio
+  - archivo
+  - escondite
+  - almacén
+  - cuartel
+  - hangar
+  - centro
+  - sala
+  - plaza
+
+characters:
+  - Carlos
+  - Elena
+  - Marco
+  - Lucía
+  - Sergio
+  - Diana
+  - Ramón
+  - Valeria
+  - Andrés
+  - Marta
+  - Jorge
+  - Patricia
+  - Tomás
+  - Sofía
+
+statements_es:
+  - Esto no es coincidencia
+  - Conecta los puntos
+  - Investiga por ti mismo
+  - La verdad está ahí fuera
+  - Algo no cuadra
+  - Seguid el dinero
+  - No es lo que parece
+  - Pregúntate quién se beneficia
+  - Ellos no quieren que sepas
+  - Las piezas encajan
+  - Despierta
+  - La conspiración es real
+
+features:
+  - tapadera
+  - vigilancia
+  - supresión

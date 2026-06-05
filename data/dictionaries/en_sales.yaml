@@ -34,7 +34,6 @@ nouns:
   - innovation
   - excellence
   - satisfaction
-  - solution
   - ROI
   - conversion
   - engagement
@@ -63,8 +62,8 @@ nouns:
   - authority
   - leader
   - industry
-  - market share
-  - competitive advantage
+  - dominance
+  - edge
   - differentiation
 
 verbs:
@@ -104,12 +103,12 @@ adjectives:
   - reliable
   - exclusive
   - premium
-  - cutting-edge
+  - novel
   - revolutionary
-  - award-winning
-  - market-leading
-  - world-class
-  - best-in-class
+  - laureate
+  - dominant
+  - elite
+  - supreme
   - unmatched
   - unbeatable
   - superior
@@ -145,7 +144,6 @@ locations:
   - region
   - partnership
   - community
-  - ecosystem
   - landscape
   - arena
   - horizon
@@ -182,26 +180,12 @@ characters:
   - John
   - Richard
 
-statements:
-  - Maximize your potential today
-  - Transform your business now
-  - Unlock unprecedented growth
-  - Experience the difference
-  - Achieve more with less
-  - Drive results immediately
-  - Deliver superior value
-  - Exceed all expectations
-  - Revolutionize your approach
-  - Accelerate your success
-  - Dominate your market
-  - Secure your future
-
 statements_en:
   - This is important
   - Consider the implications
   - Make your own decision
 
 features:
-  - aspect
-  - quality
-  - property
+  - ROI
+  - scalability
+  - differentiation

@@ -1,7 +1,139 @@
-# Spanish version - minimal but complete
-nouns: [cosa, palabra, momento, tiempo, lugar, persona, gente, aspecto, idea, concepto, elemento, parte, todo]
-verbs: [fue, pasó, sucedió, ocurrió, aconteció, realizó, llevó, trajo, consiguió, alcanzó, logró]
-adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, peor, diferente, especial]
-locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
-characters: [persona, individuo, ser, actor, protagonista, figura]
-statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]
+# Spanish Passive-Aggressive Profile Dictionary
+# Sarcastic, backhanded, subtle hostility discourse
+
+nouns:
+  - sarcasmo
+  - ironía
+  - comentario
+  - tono
+  - mirada
+  - gesto
+  - actitud
+  - sonrisa
+  - indirecta
+  - alusión
+  - reproche
+  - queja
+  - silencio
+  - vacío
+  - mueca
+  - excusa
+  - ceño
+  - suspiro
+  - desdén
+  - displicencia
+  - reticencia
+  - resistencia
+  - resentimiento
+  - amargura
+  - envidia
+  - celos
+  - desconfianza
+  - manipulación
+  - control
+  - poder
+  - victimismo
+  - autocompasión
+  - hipocresía
+  - falsedad
+  - doblez
+  - contradicción
+
+verbs:
+  - sonrió
+  - suspiró
+  - burló
+  - ironizó
+  - murmuró
+  - insinuó
+  - retumbó
+  - silenció
+  - excluyó
+  - tartamudeó
+  - esquivó
+  - evadió
+  - huyó
+  - escapó
+  - desvió
+  - minimizó
+  - relativizó
+  - generalizó
+  - exageró
+  - tergiversó
+  - distorsionó
+  - retorció
+
+adjectives:
+  - sarcástica
+  - irónica
+  - mordaz
+  - cáustica
+  - sardónica
+  - mala
+  - doble
+  - velada
+  - sutil
+  - disimulada
+  - indirecta
+  - ambigua
+  - confusa
+  - vaga
+  - pasivo-agresiva
+  - condescendiente
+  - pretenciosa
+  - hipócrita
+  - fingida
+  - falsa
+
+locations:
+  - oficina
+  - sala
+  - comedor
+  - cocina
+  - sala de estar
+  - dormitorio
+  - pasillo
+  - escalera
+  - ventana
+  - puerta
+  - jardín
+  - terraza
+  - garaje
+  - sótano
+  - ático
+
+characters:
+  - Miguel
+  - Carlos
+  - Diego
+  - Fernando
+  - Alejandro
+  - Andrés
+  - Roberto
+  - Javier
+  - Luis
+  - Francisco
+  - Ricardo
+  - Tomás
+
+statements_es:
+  - Claro que sí
+  - Ya veo
+  - Qué curioso
+  - Interesante
+  - Qué sorpresa
+  - No sabía que tú sabías tanto
+  - Qué lindo
+  - Bueno, qué se le va a hacer
+  - Qué lástima
+  - Como tú digas
+  - Está bien, no pasa nada
+  - No es que me importe
+  - Si tú lo dices
+  - Qué valiente de tu parte
+  - Qué original
+
+features:
+  - subtexto
+  - implicación
+  - tono

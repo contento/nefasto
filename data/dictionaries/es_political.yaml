@@ -41,7 +41,7 @@ verbs:
   - argumentó
   - propuso
   - promulgó
-  - se opuso
+  - opuso
   - abogó
   - desafió
   - reformó
@@ -55,7 +55,7 @@ verbs:
   - afirmó
   - aseveró
   - disputó
-  - hizo campaña
+  - campañeó
   - apeló
   - convenció
   - refutó
@@ -64,7 +64,7 @@ verbs:
   - decidió
   - gobernó
   - decretó
-  - enmiendó
+  - enmendó
   - impugnó
 
 adjectives:
@@ -163,13 +163,6 @@ statements_es:
   - El liderazgo requiere visión
 
 features:
-  - poder
-  - autoridad
-  - influencia
   - legitimidad
-  - justicia
-  - estabilidad
-  - reforma
-  - progreso
-  - democracia
-  - libertad
+  - soberanía
+  - mandato
