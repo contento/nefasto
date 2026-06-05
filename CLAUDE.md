@@ -239,6 +239,7 @@ swipl -l src/main.pl -- --lang es --seed 123 --config config/custom.yaml
 - No tabling/memoization - each generation is fresh
 - Word banks are small - add to them as needed
 - Narrative templates are basic - extend in narratives.pl
+- Profiles are mutually exclusive - no blending yet
 
 ## Next Steps (See TODO.md)
 1. Expand word banks (150+ per category per language)
@@ -247,6 +248,18 @@ swipl -l src/main.pl -- --lang es --seed 123 --config config/custom.yaml
 4. Wire up unused features (anaphora, ontology constraints, narrative templates)
 5. Add coherence validation metrics
 6. Expand TUI with more options
+7. Profile blending: weighted influence of multiple profiles in one narrative
+
+## Future Enhancements
+
+### JSON-LD with Ontologies (TODO)
+When word bank relationships become complex:
+- Migrate from YAML to JSON-LD format for linked data
+- Define ontologies: word semantic types, relationships, constraints
+- Enable: "senator" isa political-entity, can-debate with political-entity
+- Support cross-profile semantic references
+- Enable reasoning about narrative coherence at semantic level
+- Still maintain simple YAML export for human editing
 
 ## Useful SWI-Prolog Predicates
 - `phrase/2, phrase/3` - Execute DCG rules
