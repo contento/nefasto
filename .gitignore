@@ -59,3 +59,6 @@ logs/
 
 # Knowledge graph output (if large)
 graphify-out/
+
+# Code review findings (temporary analysis documents)
+REVIEW_FINDINGS.md

@@ -33,10 +33,10 @@ load_yaml_dictionary(FilePath, Lang, Profile) :-
 parse_yaml(Lines, Lang, Profile) :-
     atom_concat(Lang, '_', Prefix),
     atom_concat(Prefix, Profile, LangProfile),
-    parse_yaml_lines(Lines, LangProfile, undefined, []).
+    parse_dict_yaml_lines(Lines, LangProfile, undefined, []).
 
 % End of file - save final category if any
-parse_yaml_lines([], LangProfile, Category, Words) :-
+parse_dict_yaml_lines([], LangProfile, Category, Words) :-
     (Category \= undefined, Words \= [] ->
         reverse(Words, WordList),
         assertz(word_bank(Category, LangProfile, WordList))
@@ -45,7 +45,7 @@ parse_yaml_lines([], LangProfile, Category, Words) :-
     ), !.
 
 % Category line (word_type:)
-parse_yaml_lines([Line | Rest], LangProfile, PrevCategory, PrevWords) :-
+parse_dict_yaml_lines([Line | Rest], LangProfile, PrevCategory, PrevWords) :-
     atom_string(Line, LineStr),
     atom_concat(Category, ':', LineStr),
     \+ atom_concat('  ', _, LineStr), !,
@@ -57,23 +57,23 @@ parse_yaml_lines([Line | Rest], LangProfile, PrevCategory, PrevWords) :-
         true
     ),
     % Continue with new category
-    parse_yaml_lines(Rest, LangProfile, Category, []).
+    parse_dict_yaml_lines(Rest, LangProfile, Category, []).
 
 % Word item line (  - word)
-parse_yaml_lines([Line | Rest], LangProfile, Category, Words) :-
+parse_dict_yaml_lines([Line | Rest], LangProfile, Category, Words) :-
     atom_string(Line, LineStr),
     atom_concat('  - ', Word, LineStr), !,
-    parse_yaml_lines(Rest, LangProfile, Category, [Word | Words]).
+    parse_dict_yaml_lines(Rest, LangProfile, Category, [Word | Words]).
 
 % Skip comments and empty lines
-parse_yaml_lines([Line | Rest], LangProfile, Category, Words) :-
+parse_dict_yaml_lines([Line | Rest], LangProfile, Category, Words) :-
     atom_string(Line, LineStr),
     (LineStr = '' ; atom_concat('#', _, LineStr)), !,
-    parse_yaml_lines(Rest, LangProfile, Category, Words).
+    parse_dict_yaml_lines(Rest, LangProfile, Category, Words).
 
 % Skip any other lines
-parse_yaml_lines([_ | Rest], LangProfile, Category, Words) :-
-    parse_yaml_lines(Rest, LangProfile, Category, Words).
+parse_dict_yaml_lines([_ | Rest], LangProfile, Category, Words) :-
+    parse_dict_yaml_lines(Rest, LangProfile, Category, Words).
 
 % Helper: check if file exists
 exists_file(Path) :-

@@ -168,7 +168,7 @@ about_menu :-
 
 prompt_continue :-
     write('Press ENTER to continue...'),
-    read(_),
+    read_line_to_string(user_input, _),
     clear_screen.
 
 format_menu(_, []) :- !.

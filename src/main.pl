@@ -12,11 +12,8 @@ current_seed(42).
 :- consult('src/dict_loader.pl').
 :- consult('src/tui.pl').
 :- consult('src/generator.pl').
-:- consult('src/ontology.pl').
 :- consult('src/config.pl').
 :- consult('src/random_utils.pl').
-:- consult('src/state.pl').
-:- consult('data/narratives.pl').
 
 % Load profile-specific dictionaries on startup
 :- load_dictionaries(en, political).

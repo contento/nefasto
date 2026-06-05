@@ -102,10 +102,6 @@ description_possessive(es) --> ['Su'].
 space --> [' '].
 nl --> ['\n'].
 
-% Subject selection (with state tracking)
-subject(Lang, Subject) -->
-    noun(Lang, Subject).
-
 % Action verbs
 action(en, Action) -->
     { random_select_word(verbs, en, Action) },
@@ -115,10 +111,6 @@ action(es, Action) -->
     { random_select_word(verbs, es, Action) },
     [Action].
 
-% Objects
-object(Lang, Object) -->
-    [the], space, noun(Lang, Object).
-
 % Locations
 location(en, Loc) -->
     { random_select_word(locations, en, Loc) },
@@ -126,8 +118,18 @@ location(en, Loc) -->
 
 location(es, Loc) -->
     { random_select_word(locations, es, Loc),
-      (atom_concat(_, 'a', Loc) -> Article = la ; Article = el) },
+      spanish_article(Loc, Article) },
     [en], space, [Article, Loc].
+
+% Spanish grammatical gender for locations (proper mapping, not heuristic)
+spanish_article(Loc, la) :-
+    member(Loc, [
+        'sala de audiencias', 'cámara', 'jurisdicción', 'corte de apelaciones',
+        'suprema corte', 'corte de distrito', 'sala', 'tribuna', 'oficina legal',
+        'biblioteca legal', 'región', 'convención', 'plaza', 'casa', 'ciudad',
+        'puerta', 'ventana', 'mesa', 'silla', 'avenida', 'calle'
+    ]), !.
+spanish_article(_, el).
 
 % Speakers (for dialogue)
 speaker(Lang, Speaker) -->
@@ -160,27 +162,6 @@ feature(en, _) -->
 feature(es, _) -->
     { random_select_word(features, es, Feature) },
     [Feature].
-
-% Opening words - these come from phrase execution context
-% They get instantiated when needed
-
-% Punctuation helpers
-opening(Lang, Opening) -->
-    { opening_phrase(Lang, Opening) },
-    [Opening].
-
-opening_phrase(en, 'Once upon a time').
-opening_phrase(es, 'Érase una vez').
-
-next_phrase(en, 'Then').
-next_phrase(es, 'Luego').
-
-final_phrase(en, 'Finally').
-final_phrase(es, 'Finalmente').
-
-% Copula (to be)
-copula(en) --> [was].
-copula(es) --> [fue].
 
 % Generic noun handler
 noun(Lang, Noun) -->

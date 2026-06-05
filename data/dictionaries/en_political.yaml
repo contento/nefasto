@@ -98,7 +98,6 @@ verbs:
   - ruled
   - decreed
   - amended
-  - challenged
   - demanded
   - petitioned
   - lobbied
@@ -205,7 +204,6 @@ locations:
   - plaza
   - hall
   - building
-  - chamber
   - platform
 
 characters:
