@@ -1,0 +1,7 @@
+# English Technical/Engineering Profile
+nouns: [algorithm, optimization, performance, parameter, infrastructure, system, architecture, module, component, process, flow, pipeline, protocol, interface, layer, framework, mechanism, specification, implementation, deployment, scaling, throughput, latency, bandwidth, framework, cache, server, cluster, database, index]
+verbs: [implemented, optimized, deployed, scaled, configured, engineered, architected, designed, executed, processed, computed, compiled, debugged, profiled, benchmarked, analyzed, refactored, partitioned]
+adjectives: [efficient, robust, scalable, deterministic, reliable, redundant, modular, distributed, asynchronous, synchronous, optimal, minimal, maximal, performance-critical, fault-tolerant]
+locations: [server, cluster, data center, production, staging, environment, cloud]
+characters: [engineer, architect, developer, systems administrator, technician]
+statements: [Performance optimized, Scalable design, Reliable implementation, Efficient processing]

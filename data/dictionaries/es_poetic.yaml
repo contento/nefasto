@@ -1,0 +1,7 @@
+# Spanish version - minimal but complete
+nouns: [cosa, palabra, momento, tiempo, lugar, persona, gente, aspecto, idea, concepto, elemento, parte, todo]
+verbs: [fue, pasó, sucedió, ocurrió, aconteció, realizó, llevó, trajo, consiguió, alcanzó, logró]
+adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, peor, diferente, especial]
+locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
+characters: [persona, individuo, ser, actor, protagonista, figura]
+statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]

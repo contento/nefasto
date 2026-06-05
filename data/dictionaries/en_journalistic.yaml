@@ -1,0 +1,131 @@
+# English Journalistic/Reportorial Profile Dictionary
+nouns:
+  - report
+  - source
+  - witness
+  - investigation
+  - allegation
+  - claim
+  - fact
+  - truth
+  - story
+  - headline
+  - article
+  - journalist
+  - reporter
+  - editor
+  - public
+  - official
+  - spokesperson
+  - statement
+  - incident
+  - event
+  - incident
+  - breaking news
+  - update
+  - confirmation
+  - denial
+  - comment
+  - background
+  - attribution
+  - credibility
+  - verification
+  - accuracy
+
+verbs:
+  - reported
+  - investigated
+  - confirmed
+  - alleged
+  - disclosed
+  - revealed
+  - announced
+  - stated
+  - claimed
+  - denied
+  - admitted
+  - acknowledged
+  - verified
+  - checked
+  - corroborated
+  - substantiated
+  - documented
+  - covered
+  - broke
+  - covered
+  - sourced
+  - cited
+  - quoted
+  - interviewed
+  - questioned
+  - examined
+  - scrutinized
+
+adjectives:
+  - alleged
+  - confirmed
+  - unconfirmed
+  - credible
+  - disputed
+  - verified
+  - accurate
+  - inaccurate
+  - reliable
+  - unreliable
+  - published
+  - reported
+  - breaking
+  - developing
+  - ongoing
+  - documented
+  - sourced
+  - anonymous
+  - official
+  - unofficial
+  - preliminary
+  - final
+  - firsthand
+  - secondhand
+  - eyewitness
+  - anonymous
+  - attributed
+  - unattributed
+
+locations:
+  - newsroom
+  - press conference
+  - courthouse
+  - parliament
+  - government
+  - agency
+  - organization
+  - scene
+  - location
+  - headquarters
+  - field
+  - studio
+  - office
+  - street
+  - site
+
+characters:
+  - journalist
+  - reporter
+  - editor
+  - source
+  - witness
+  - official
+  - spokesperson
+  - commentator
+
+statements:
+  - According to sources
+  - On the record
+  - Off the record
+  - Breaking news
+  - Developing story
+  - Confirmed reports
+  - Unnamed sources
+  - Official statement
+  - No comment
+  - Statement pending

@@ -13,6 +13,12 @@ profile(karen, 'Karen discourse - entitled, demanding, complaint-focused').
 profile(academic, 'Academic/scholarly - technical, formal, evidence-based').
 profile(casual, 'Casual/colloquial - friendly, informal, contemporary slang').
 profile(legal, 'Legal/formal - precise, technical jargon, adversarial').
+profile(journalistic, 'Journalistic - neutral, informative, fact-based reporting').
+profile(poetic, 'Poetic/lyrical - metaphorical, artistic, evocative, emotional').
+profile(technical, 'Technical/engineering - precise, systematic, optimization-focused').
+profile(conspiracy, 'Conspiracy theorist - suspicious, connecting dots, paranoid').
+profile(motivational, 'Motivational speaker - inspirational, action-oriented, empowering').
+profile(passive_aggressive, 'Passive-aggressive - sarcastic, backhanded, subtle hostility').
 
 % Validate profile
 is_valid_profile(Profile) :-
@@ -25,7 +31,7 @@ set_profile(NewProfile) :-
     assertz(current_profile(NewProfile)).
 
 set_profile(Invalid) :-
-    format('ERROR: Unknown profile "~w". Valid profiles: political, sales, karen, academic, casual, legal~n', [Invalid]),
+    format('ERROR: Unknown profile "~w". Valid profiles: political, sales, karen, academic, casual, legal, journalistic, poetic, technical, conspiracy, motivational, passive_aggressive~n', [Invalid]),
     fail.
 
 % Get current profile

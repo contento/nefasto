@@ -25,12 +25,24 @@ current_seed(42).
 :- load_dictionaries(en, academic).
 :- load_dictionaries(en, casual).
 :- load_dictionaries(en, legal).
+:- load_dictionaries(en, journalistic).
+:- load_dictionaries(en, poetic).
+:- load_dictionaries(en, technical).
+:- load_dictionaries(en, conspiracy).
+:- load_dictionaries(en, motivational).
+:- load_dictionaries(en, passive_aggressive).
 :- load_dictionaries(es, political).
 :- load_dictionaries(es, sales).
 :- load_dictionaries(es, karen).
 :- load_dictionaries(es, academic).
 :- load_dictionaries(es, casual).
 :- load_dictionaries(es, legal).
+:- load_dictionaries(es, journalistic).
+:- load_dictionaries(es, poetic).
+:- load_dictionaries(es, technical).
+:- load_dictionaries(es, conspiracy).
+:- load_dictionaries(es, motivational).
+:- load_dictionaries(es, passive_aggressive).
 
 main :-
     cli_args(Args),

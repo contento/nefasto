@@ -1,0 +1,89 @@
+# Spanish Journalistic Profile
+nouns:
+  - informe
+  - fuente
+  - testigo
+  - investigación
+  - acusación
+  - afirmación
+  - hecho
+  - verdad
+  - historia
+  - titular
+  - artículo
+  - periodista
+  - reportero
+  - editor
+  - público
+  - oficial
+  - portavoz
+  - declaración
+  - incidente
+  - evento
+  - noticia
+  - actualización
+  - confirmación
+  - negación
+  - comentario
+  - verificación
+  - precisión
+
+verbs:
+  - informó
+  - investigó
+  - confirmó
+  - alegó
+  - reveló
+  - anunció
+  - declaró
+  - admitió
+  - reconoció
+  - verificó
+  - cubrió
+  - citó
+  - entrevistó
+  - cuestionó
+  - examinó
+
+adjectives:
+  - alegado
+  - confirmado
+  - no confirmado
+  - creíble
+  - impugnado
+  - verificado
+  - preciso
+  - oficial
+  - no oficial
+  - preliminar
+  - final
+  - documentado
+  - anónimo
+  - atribuido
+  - no atribuido
+
+locations:
+  - sala de prensa
+  - conferencia de prensa
+  - tribunal
+  - parlamento
+  - gobierno
+  - agencia
+  - organización
+  - escena
+  - ubicación
+
+characters:
+  - periodista
+  - reportero
+  - editor
+  - fuente
+  - testigo
+  - oficial
+  - portavoz
+
+statements:
+  - Según fuentes
+  - Declaración oficial
+  - Sin comentarios
+  - Declaración pendiente
