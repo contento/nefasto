@@ -37,18 +37,19 @@ The codebase revives 1989 Turbo Prolog techniques using modern SWI-Prolog, with 
    - User interaction
    - **Why it matters**: Users interact with this; if it breaks, the whole app breaks
 
-4. **data/dict_en.pl** & **data/dict_es.pl** - Lexicons
-   - word_bank/3 definitions for words
-   - **Why it matters**: More words = better variety; these grow as project grows
+4. **data/dictionaries/*.yaml** - Discourse profiles (12 profiles × 2 languages)
+   - Word banks organized by profile (e.g., en_political.yaml, es_legal.yaml)
+   - Categories: nouns, verbs, adjectives, locations, characters, statements_en/es, features
+   - **Why it matters**: More words = better variety; profiles give narratives distinct voices
 
-5. **src/ontology.pl** - Semantic rules
-   - can_perform/2, location_allows_activity/2, etc.
-   - **Why it matters**: Ensures narratives are coherent
+5. **src/dict_loader.pl** - Dictionary loader
+   - Loads YAML files and converts to word_bank/3 predicates
+   - **Why it matters**: Enables dynamic profile loading without recompiling
 
-6. **src/state.pl** - Entity tracking
-   - Tracks what's been mentioned
-   - Prevents contradictions
-   - **Why it matters**: Enables coherent multi-sentence narratives
+6. **src/profiles.pl** - Profile registry
+   - Registers available discourse profiles
+   - set_profile/1, current_profile/1 predicates
+   - **Why it matters**: Selects which word bank gets used during generation
 
 7. **src/config.pl** - Configuration
    - JSON/YAML/TOML loading
@@ -70,12 +71,12 @@ The codebase revives 1989 Turbo Prolog techniques using modern SWI-Prolog, with 
 
 ### Day 2: Run It
 ```bash
-cd /Users/contento/projects/prolog-discourse-gen
+cd /Users/contento/projects/contento/nefasto
 swipl -l src/main.pl
 
 # Try different commands:
 swipl -l src/main.pl -- --lang es
-swipl -l src/main.pl -- --seed 42
+swipl -l src/main.pl -- --seed 42 --profile academic
 ```
 
 Write down any errors. Check TODO.md to see if they're known issues.
@@ -83,10 +84,11 @@ Write down any errors. Check TODO.md to see if they're known issues.
 ### Day 3: Read the Code
 Start with **src/generator.pl**. Read the DCG rules:
 ```prolog
-story(Lang) --> setup(Lang), complication(Lang), resolution(Lang).
+story(Lang) --> setup(Lang, Char), complication(Lang, Char), resolution(Lang, Char).
+setup(en, Char) --> [once], space, {random_select_word(characters, en, Char)}, [Char], ...
 ```
 
-Understand: `phrase/3` turns these rules into token sequences. Then understand how those get joined into text.
+Understand: Character flows through story; `phrase/3` turns these rules into token sequences. Those get joined into text with atomic_list_concat/3.
 
 ### Day 4: Pick a Task
 Start with a **Quick Win** from TODO.md:
@@ -154,24 +156,28 @@ Both EN and ES from day one:
 ## Common Questions
 
 ### Q: Where do I add new words?
-**A:** Edit **data/dict_en.pl** and **data/dict_es.pl** at the same time.
-```prolog
-word_bank(nouns, en, [existing_words..., new_word]).
-word_bank(nouns, es, [palabras_existentes..., palabra_nueva]).
+**A:** Edit **data/dictionaries/en_[profile].yaml** and **data/dictionaries/es_[profile].yaml** together.
+```yaml
+# en_political.yaml
+nouns:
+  - existing_word
+  - new_word
+
+# es_political.yaml
+nouns:
+  - palabra_existente
+  - palabra_nueva
 ```
 
-Then test: `swipl -l src/main.pl -- --lang en` and `--lang es`
+Then test: `swipl -l src/main.pl -- --lang en --profile political` and `--lang es`
 
 ### Q: How do I add a new narrative type?
 **A:** 
-1. Add DCG rule to **src/generator.pl**:
-   ```prolog
-   my_narrative(Lang) --> [token1], [token2], ...
-   ```
-2. Add to **data/narratives.pl** as template
-3. Add menu option to **src/tui.pl**
-4. Update **src/generator.pl** `generate_narrative/3`
-5. Test it works for both languages
+1. Add DCG rule to **src/generator.pl** (dialogue, description, simple_story already exist)
+2. Add menu option to **src/tui.pl**
+3. Add handler to **src/tui.pl** `handle_narrative_choice/1`
+4. Update **src/generator.pl** `generate_narrative/3` clause
+5. Test both languages: `swipl -l src/main.pl -- --lang en` and `--lang es`
 
 ### Q: Why does generation fail sometimes?
 **A:** Common reasons:
@@ -204,8 +210,8 @@ See TODO.md "Known Issues" section.
 
 ### Issue: Nothing generates (DCG fails)
 **Check**:
-1. Is word_bank/3 defined? `grep -n "word_bank(nouns" data/dict_*.pl`
-2. Are data files loaded? Look for `:- consult(...)` in src/main.pl
+1. Is word_bank/3 defined? `grep -n "word_bank(nouns" data/dictionaries/*.yaml`
+2. Are dictionaries loaded? Check load_dictionaries/2 calls in src/main.pl
 3. Is phrase/3 being called? Add debug output: `write('Generating...'), nl`
 
 ### Issue: Spanish characters appear as gibberish
@@ -244,15 +250,18 @@ swipl -l src/main.pl -- --seed 100
 swipl -c src/main.pl  # Compiles all
 ```
 
-### Update Both Dictionaries
-If you add word types, update both:
-```prolog
-% In dict_en.pl:
-word_bank(emotions, en, [happy, sad, afraid, ...]).
+### Update All Profiles
+If you add word categories, update all profile YAML files:
 
-% In dict_es.pl:
-word_bank(emotions, es, [feliz, triste, asustado, ...]).
+```yaml
+# In all en_[profile].yaml and es_[profile].yaml:
+emotions:
+  - happy
+  - sad
+  - afraid
 ```
+
+Currently 12 profiles exist: political, sales, karen, academic, casual, legal, journalistic, poetic, technical, conspiracy, motivational, passive_aggressive
 
 ### Document Changes
 - If adding architecture, update CLAUDE.md
@@ -268,35 +277,40 @@ When you understand how something would have worked in 1989, add a comment:
 
 ---
 
-## What Needs Work (Critical)
+## What Needs Work
 
-From TODO.md, highest priority:
+From TODO.md — current focus areas:
 
-1. **DCG phrase/3 integration** - Currently not working
-   - Test: phrase(story(en), X) should produce tokens
-   - Debug: word_bank visibility, rule syntax
+1. **Expand dictionaries** - Growing organically
+   - Target: 150+ nouns, 75+ verbs per profile per language
+   - Current: ~40-60 each profile
 
-2. **Expand dictionaries** - Too few words
-   - Target: 100+ nouns, 50+ verbs per language
-   - Current: ~30-40 each
+2. **Multi-word nouns** - Currently create grammatically odd output
+   - "social media" as location reads: "arrived in the social media"
+   - Consider splitting or removing these from locations
 
-3. **Fix configuration loading** - JSON/YAML/TOML parsers are stubs
-   - Implement actual parsing or use SWI libraries
+3. **Documentation sync** - CLAUDE.md, README.md, RUN.md have outdated examples
+   - Update DCG rule examples to show character parameter
+   - Fix path references
+   - Update TODO.md completed items
 
-4. **Implement ontology checking** - Constraints exist but aren't enforced
-   - Check can_perform/2 before generating actions
+4. **Spanish gender mapping** - Currently uses simple heuristic (check if ends in 'a')
+   - Proper mapping implemented for known locations
+   - Expand as more locations are added
 
 ---
 
 ## Project Status
 
-**Current**: Early development. Core structure exists, but:
-- ✅ Architecture designed
-- ✅ Module structure in place
-- ✅ TUI framework exists
-- ⚠️ DCG generation has bugs
-- ⚠️ Dictionaries are small
-- ⚠️ Configuration parsing incomplete
+**Current**: Stable core with 12 discourse profiles.
+- ✅ DCG narrative generation working
+- ✅ Character-driven story architecture
+- ✅ 12 discourse profiles (EN/ES pairs)
+- ✅ YAML-based dictionary loading
+- ✅ CLI args (--lang, --profile, --seed, --config)
+- ✅ TUI with menu system
+- ⚠️ Dictionary word counts still growing (community contribution welcome)
+- ⚠️ Configuration file parsing needs expansion
 
 **Working**: Module loading, TUI menu navigation (mostly), basic structure
 

@@ -48,10 +48,10 @@ Where `rnd` was Turbo Prolog's random function. "Unfortunately I don't keep the 
 swipl -l src/main.pl -- --lang en --seed 42
 ```
 
-**Output:**
+**Output (simple_story):**
 
 ```text
-once crown was in the gorge . then crown climbed the shadow . finally crown found .
+once Napoleon arrived in the state . then Napoleon amended the representative . finally Napoleon contested .
 ```
 
 ### Spanish Story  
@@ -63,13 +63,14 @@ swipl -l src/main.pl -- --lang es --seed 100
 **Output:**
 
 ```text
-Érase bosque fue en el río . luego bosque corrió the ciervo . finalmente bosque huyó .
+Érase una vez Lincoln llegó en el tribunal . luego Lincoln presentó el demandante . finalmente Lincoln apeló .
 ```
 
-**Status:** Core narrative generation is working! Both English and Spanish generate coherent sentences with actual word selections. Recent fixes:
-- Fixed multifile word_bank declaration (English + Spanish coexist properly)
-- Fixed DCG subject tracking (subject carries through story)
-- Fixed CORS, server port, and critical type errors from code review
+**Status:** Core narrative generation is working with character-driven narratives. Recent improvements:
+- Fixed TUI prompt_continue hang (read/1 → read_line_to_string/3)
+- Fixed Spanish article gender mapping (proper lookup instead of heuristic)
+- 12 discourse profiles fully implemented (EN/ES pairs)
+- Removed dead code (state.pl, ontology.pl, narratives.pl, duplicate words)
 
 ## Discourse Profiles
 
@@ -86,9 +87,9 @@ swipl -l src/main.pl -- --lang en --profile political --seed 42
 **Sample outputs:**
 
 ```text
-once Napoleon arrived in the state . then Napoleon amended the clause . finally Napoleon contested with status-quo .
-once Napoleon arrived in the chamber . then Napoleon conspired the representative . finally Napoleon betrayed with strategic .
-once Lincoln arrived in the territory . then Lincoln declared the rule . finally Lincoln refuted with democratic .
+once Napoleon arrived in the state . then Napoleon amended the clause . finally Napoleon contested .
+once Lincoln arrived in the chamber . then Lincoln conspired the representative . finally Lincoln betrayed .
+once Roosevelt arrived in the territory . then Roosevelt declared the rule . finally Roosevelt refuted .
 ```
 
 **Vocabulary:** senator, parliament, legislation, debate, reform, decree, policy, authority, etc.
@@ -104,9 +105,9 @@ swipl -l src/main.pl -- --lang en --profile sales --seed 42
 **Sample outputs:**
 
 ```text
-once Michael arrived in the office . then Michael persuaded the efficiency . finally Michael maximized with outstanding .
-once Rockefeller arrived in the network . then Rockefeller revolutionized the agreement . finally Rockefeller exceeded with outstanding .
-once Bezos arrived in the space . then Bezos expanded the industry . finally Bezos generated with premium .
+once Michael arrived in the office . then Michael persuaded the efficiency . finally Michael maximized .
+once Rockefeller arrived in the network . then Rockefeller revolutionized the agreement . finally Rockefeller exceeded .
+once Bezos arrived in the space . then Bezos expanded the industry . finally Bezos generated .
 ```
 
 **Vocabulary:** product, solution, growth, innovation, ROI, synergy, market, revenue, etc.
@@ -122,18 +123,20 @@ swipl -l src/main.pl -- --lang en --profile karen --seed 42
 **Sample outputs:**
 
 ```text
-once Patricia arrived in the restaurant . then Patricia suggested the refund . finally Patricia cautioned with unprofessional .
-once Patricia arrived in the newspaper . then Patricia harmed the investment . finally Patricia threatened with discriminatory .
-once Brenda arrived in the television . then Brenda escalated the expectation . finally Brenda cautioned with unfair .
+once Patricia arrived in the restaurant . then Patricia suggested the refund . finally Patricia cautioned .
+once Karen arrived in the newspaper . then Karen harmed the investment . finally Karen threatened .
+once Brenda arrived in the television . then Brenda escalated the expectation . finally Brenda demanded .
 ```
 
 **Vocabulary:** manager, complaint, unacceptable, refund, lawsuit, demand, threat, etc.
 
-**See [PROFILES.md](PROFILES.md) for:**
+**All 12 profiles fully implemented:**
 
-- All current profiles (political, sales, karen)
-- 10+ suggested profiles for future implementation
-- Implementation guide for adding new profiles
+political, sales, karen, academic, casual, legal, journalistic, poetic, technical, conspiracy, motivational, passive_aggressive
+
+Use: `swipl -l src/main.pl -- --lang en --profile [name] --seed 42`
+
+Each profile available in both English and Spanish.
 
 ## Quick Start
 
@@ -175,8 +178,8 @@ See **[RUN.md](RUN.md)** for:
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/prolog-discourse-gen
-cd prolog-discourse-gen
+git clone https://github.com/anthropics/nefasto
+cd nefasto
 
 # For Web UI, also:
 cd web && npm install
@@ -190,16 +193,19 @@ nefasto/                      # Nefasto Discourse Generator
 │   ├── main.pl              # Entry point & CLI arg parsing
 │   ├── tui.pl               # Terminal UI (cross-platform ANSI)
 │   ├── generator.pl         # DCG rules & phrase/3 generation
-│   ├── ontology.pl          # Entity relationships & constraints
-│   ├── state.pl             # Entity tracking & coherence
+│   ├── profiles.pl          # Discourse profile registry
+│   ├── dict_loader.pl       # YAML dictionary loader
 │   ├── config.pl            # Configuration loader (JSON/YAML/TOML)
 │   ├── random_utils.pl      # Random selection & word picking
 │   └── server.pl            # HTTP server (REST API)
 │
-├── data/                     # Lexicons & narrative templates
-│   ├── dict_en.pl           # English word banks (34+ nouns)
-│   ├── dict_es.pl           # Spanish word banks (34+ sustantivos)
-│   └── narratives.pl        # Story templates & narrative structures
+├── data/                     # Word banks & configuration
+│   ├── dictionaries/        # 12 profiles × 2 languages (24 YAML files)
+│   │   ├── en_political.yaml
+│   │   ├── es_political.yaml
+│   │   ├── en_academic.yaml
+│   │   └── ... (20 more profile files)
+│   └── config/              # Configuration examples
 │
 ├── tests/                    # Test suite
 │   └── run_tests.pl         # Comprehensive test runner (7 test categories)
@@ -232,39 +238,53 @@ nefasto/                      # Nefasto Discourse Generator
 Narratives are generated using Prolog's Definite Clause Grammars (phrase/3):
 
 ```prolog
-story(Lang) --> setup(Lang), complication(Lang), resolution(Lang).
-setup(Lang) --> [Once], subject(Lang, S), copula(Lang), location(Lang, L), ['.'].
+% Character flows through all three acts
+story(Lang) --> setup(Lang, Char), complication(Lang, Char), resolution(Lang, Char).
+
+% Setup: character arrives at location
+setup(en, Char) --> [once], space, {random_select_word(characters, en, Char)},
+    [Char], space, [arrived], space, location(en, _), ['.'].
 ```
 
 ### 2. Word Selection from Dictionaries
-Simple word banks provide vocabulary:
+Profile-based word banks provide vocabulary (loaded from YAML):
 
-```prolog
-word_bank(nouns, en, [wizard, knight, dragon, forest, castle, ...]).
-word_bank(verbs, en, [walked, flew, discovered, spoke, ...]).
+```yaml
+# data/dictionaries/en_political.yaml
+nouns:
+  - senator
+  - parliament
+  - legislation
+  - policy
 ```
 
-Random selection:
+Random selection (profile-aware):
 ```prolog
-random_select_word(nouns, en, Word).  % Randomly picks from list
+random_select_word(nouns, en, Word).  % Picks from current profile's word bank
 ```
 
-### 3. Ontological Constraints
-Semantic rules ensure coherence:
+### 3. Discourse Profiles
+Different profiles generate different narrative voices:
 
 ```prolog
-can_perform(character, speak).
-can_perform(creature, roam).
-location_allows_activity(forest, [wandered, hunted, found]).
+:- set_profile(political).  % Use political vocabulary
+generate_narrative(simple_story, en, Story).
+% "once Churchill arrived in the parliament..."
+
+:- set_profile(karen).      % Use entitled vocabulary
+generate_narrative(simple_story, en, Story).
+% "once Karen arrived in the restaurant..."
 ```
 
-### 4. State Tracking
-Entity tracking prevents contradictions:
+Each profile has 7+ word categories: nouns, verbs, adjectives, locations, characters, statements, features
+
+### 4. Spanish Gender Mapping
+Proper grammatical gender for locations:
 
 ```prolog
-record_entity(subject, wizard).
-get_last_entity(subject, wizard).
-can_use_entity(wizard).  % Check: have we used this recently?
+spanish_article(Loc, la) :-
+    member(Loc, ['sala de audiencias', 'cámara', 'jurisdicción', ...]), !.
+spanish_article(_, el).
 ```
 
 ## Configuration
