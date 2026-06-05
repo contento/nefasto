@@ -19,50 +19,58 @@ generate_narrative(description, Lang, Narrative) :-
 
 % --- DCG RULES ---
 
-% Simple Story Structure: setup -> complication -> resolution (with shared subject)
-story(Lang) --> setup(Lang, Subj), complication(Lang, Subj), resolution(Lang, Subj).
+% Improved Story Structure: character-driven narrative with semantic coherence
+story(Lang) --> setup(Lang, Char), complication(Lang, Char), resolution(Lang, Char).
 
-% English setup
-setup(en, Subj) -->
+% English setup: character arrives at location
+setup(en, Char) -->
     [once], space,
-    { random_select_word(nouns, en, Subj) },
-    [Subj], space,
-    copula(en), space, location(en, Loc), ['.'],
-    { record_entity(subject, Subj),
+    { random_select_word(characters, en, Char) },
+    [Char], space, [arrived], space,
+    location(en, Loc), ['.'],
+    { record_entity(subject, Char),
       record_entity(location, Loc) }.
 
-% Spanish setup
-setup(es, Subj) -->
-    ['Érase'], space,
-    { random_select_word(nouns, es, Subj) },
-    [Subj], space,
-    copula(es), space, location(es, Loc), ['.'],
-    { record_entity(subject, Subj),
+% Spanish setup: character arrives at location
+setup(es, Char) -->
+    ['Érase'], space, [una], space, [vez], space,
+    { random_select_word(characters, es, Char) },
+    [Char], space, [llegó], space,
+    location(es, Loc), ['.'],
+    { record_entity(subject, Char),
       record_entity(location, Loc) }.
 
-% English complication
-complication(en, Subj) -->
-    [then], space, [Subj], space,
-    action(en, Action), space, object(en, Obj), ['.'],
+% English complication: character takes meaningful action on object
+complication(en, Char) -->
+    [then], space, [Char], space,
+    action(en, Action), space,
+    [the], space, noun(en, Obj), ['.'],
     { record_entity(action, Action),
       record_entity(object, Obj) }.
 
-% Spanish complication
-complication(es, Subj) -->
-    [luego], space, [Subj], space,
-    action(es, Action), space, object(es, Obj), ['.'],
+% Spanish complication: character takes meaningful action on object
+complication(es, Char) -->
+    [luego], space, [Char], space,
+    action(es, Action), space,
+    [el], space, noun(es, Obj), ['.'],
     { record_entity(action, Action),
       record_entity(object, Obj) }.
 
-% English resolution
-resolution(en, Subj) -->
-    [finally], space, [Subj], space,
-    action(en, _), ['.'].
+% English resolution: character completes narrative arc
+resolution(en, Char) -->
+    [finally], space, [Char], space,
+    action(en, Action), space,
+    [with], space,
+    adjective(en, Quality), ['.'],
+    { record_entity(resolution, Action) }.
 
-% Spanish resolution
-resolution(es, Subj) -->
-    [finalmente], space, [Subj], space,
-    action(es, _), ['.'].
+% Spanish resolution: character completes narrative arc
+resolution(es, Char) -->
+    [finalmente], space, [Char], space,
+    action(es, Action), space,
+    [con], space,
+    adjective(es, Quality), ['.'],
+    { record_entity(resolution, Action) }.
 
 % Dialogue: speaker1 says something, speaker2 replies
 dialogue(Lang) -->

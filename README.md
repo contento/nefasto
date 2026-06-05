@@ -84,13 +84,14 @@ swipl -l src/main.pl -- --lang en --profile political --seed 42
 ```
 
 **Sample outputs:**
+
 ```text
-once act was in the tribunal . then act asserted the dispute . finally act contested .
-once republic was in the tribunal . then republic influenced the monarchy . finally republic campaigned .
-once rule was in the chamber . then rule betrayed the senator . finally rule switched .
+once Napoleon arrived in the state . then Napoleon amended the clause . finally Napoleon contested with status-quo .
+once Napoleon arrived in the chamber . then Napoleon conspired the representative . finally Napoleon betrayed with strategic .
+once Lincoln arrived in the territory . then Lincoln declared the rule . finally Lincoln refuted with democratic .
 ```
 
-**Vocabulary:** senator, parliament, legislation, debate, reform, decree, etc.
+**Vocabulary:** senator, parliament, legislation, debate, reform, decree, policy, authority, etc.
 
 ### Sales Profile
 
@@ -101,13 +102,14 @@ swipl -l src/main.pl -- --lang en --profile sales --seed 42
 ```
 
 **Sample outputs:**
+
 ```text
-once credibility was in the office . then credibility persuaded the efficiency . finally credibility maximized .
-once scalability was in the network . then scalability revolutionized the agreement . finally scalability exceeded .
-once conversion was in the space . then conversion expanded the industry . finally conversion generated .
+once Michael arrived in the office . then Michael persuaded the efficiency . finally Michael maximized with outstanding .
+once Rockefeller arrived in the network . then Rockefeller revolutionized the agreement . finally Rockefeller exceeded with outstanding .
+once Bezos arrived in the space . then Bezos expanded the industry . finally Bezos generated with premium .
 ```
 
-**Vocabulary:** product, solution, growth, innovation, ROI, synergy, etc.
+**Vocabulary:** product, solution, growth, innovation, ROI, synergy, market, revenue, etc.
 
 ### Karen Profile
 
@@ -118,13 +120,14 @@ swipl -l src/main.pl -- --lang en --profile karen --seed 42
 ```
 
 **Sample outputs:**
+
 ```text
-once compensation was in the Facebook . then compensation deserve the report . finally compensation reported .
-once status was in the restaurant . then status suggested the refund . finally status cautioned .
-once review was in the television . then review escalated the expectation . finally review cautioned .
+once Patricia arrived in the restaurant . then Patricia suggested the refund . finally Patricia cautioned with unprofessional .
+once Patricia arrived in the newspaper . then Patricia harmed the investment . finally Patricia threatened with discriminatory .
+once Brenda arrived in the television . then Brenda escalated the expectation . finally Brenda cautioned with unfair .
 ```
 
-**Vocabulary:** manager, complaint, unacceptable, refund, lawsuit, demand, etc.
+**Vocabulary:** manager, complaint, unacceptable, refund, lawsuit, demand, threat, etc.
 
 **See [PROFILES.md](PROFILES.md) for:**
 
