@@ -129,8 +129,8 @@ handle_settings_choice('1') :- !,
 
 handle_settings_choice('2') :- !,
     write('Enter seed (0-1000000): '),
-    read(Seed),
-    (integer(Seed) ->
+    read_line_to_string(user_input, SeedStr),
+    (atom_number(SeedStr, Seed), integer(Seed), Seed >= 0 ->
         retractall(current_seed(_)),
         assertz(current_seed(Seed)),
         set_random(seed(Seed)),

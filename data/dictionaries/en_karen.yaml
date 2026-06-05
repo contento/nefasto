@@ -195,7 +195,7 @@ characters:
   - Deborah
   - Catherine
 
-statements:
+statements_en:
   - I want to speak to the manager
   - This is completely unacceptable
   - I pay my taxes
@@ -212,11 +212,6 @@ statements:
   - I demand a refund
   - I demand compensation
   - You will regret this
-
-statements_en:
-  - This is important
-  - Consider the implications
-  - Make your own decision
 
 features:
   - aspect

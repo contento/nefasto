@@ -59,17 +59,13 @@ complication(es, Char) -->
 % English resolution: character completes narrative arc
 resolution(en, Char) -->
     [finally], space, [Char], space,
-    action(en, Action), space,
-    [with], space,
-    adjective(en, Quality), ['.'],
+    action(en, Action), ['.'],
     { record_entity(resolution, Action) }.
 
 % Spanish resolution: character completes narrative arc
 resolution(es, Char) -->
     [finalmente], space, [Char], space,
-    action(es, Action), space,
-    [con], space,
-    adjective(es, Quality), ['.'],
+    action(es, Action), ['.'],
     { record_entity(resolution, Action) }.
 
 % Dialogue: speaker1 says something, speaker2 replies
@@ -129,8 +125,9 @@ location(en, Loc) -->
     [in, the, Loc].
 
 location(es, Loc) -->
-    { random_select_word(locations, es, Loc) },
-    [en], space, [el, Loc].
+    { random_select_word(locations, es, Loc),
+      (atom_concat(_, 'a', Loc) -> Article = la ; Article = el) },
+    [en], space, [Article, Loc].
 
 % Speakers (for dialogue)
 speaker(Lang, Speaker) -->
