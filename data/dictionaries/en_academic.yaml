@@ -149,3 +149,13 @@ statements:
   - Methodology enables
   - Results support
   - Findings indicate
+
+statements_en:
+  - This is important
+  - Consider the implications
+  - Make your own decision
+
+features:
+  - aspect
+  - quality
+  - property

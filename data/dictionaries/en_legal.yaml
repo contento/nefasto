@@ -143,3 +143,13 @@ statements:
   - Precedent establishes
   - The motion is denied
   - The verdict is rendered
+
+statements_en:
+  - This is important
+  - Consider the implications
+  - Make your own decision
+
+features:
+  - aspect
+  - quality
+  - property

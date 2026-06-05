@@ -131,3 +131,13 @@ statements:
   - Pura buena onda
   - Pasándola bien
   - Mejor día del mundo
+
+statements_es:
+  - Esto es importante
+  - Considera las implicaciones
+  - Toma tu propia decisión
+
+features:
+  - aspect
+  - quality
+  - property

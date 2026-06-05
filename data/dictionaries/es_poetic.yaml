@@ -5,3 +5,13 @@ adjectives: [bueno, malo, bonito, feo, grande, pequeño, nuevo, viejo, mejor, pe
 locations: [lugar, espacio, sitio, área, zona, región, punto, escena]
 characters: [persona, individuo, ser, actor, protagonista, figura]
 statements: [Fue así, Pasó algo, Sucedió lo inesperado, Ocurrió un momento]
+
+statements_es:
+  - Esto es importante
+  - Considera las implicaciones
+  - Toma tu propia decisión
+
+features:
+  - aspect
+  - quality
+  - property

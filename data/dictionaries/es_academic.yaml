@@ -131,3 +131,13 @@ statements:
   - Los datos confirman
   - El marco explica
   - Los resultados apoyan
+
+statements_es:
+  - Esto es importante
+  - Considera las implicaciones
+  - Toma tu propia decisión
+
+features:
+  - aspect
+  - quality
+  - property

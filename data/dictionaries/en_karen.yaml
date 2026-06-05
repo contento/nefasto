@@ -212,3 +212,13 @@ statements:
   - I demand a refund
   - I demand compensation
   - You will regret this
+
+statements_en:
+  - This is important
+  - Consider the implications
+  - Make your own decision
+
+features:
+  - aspect
+  - quality
+  - property

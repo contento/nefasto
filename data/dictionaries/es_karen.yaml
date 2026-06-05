@@ -186,3 +186,13 @@ statements:
   - Exijo un reembolso
   - Exijo compensación
   - Se arrepentirá de esto
+
+statements_es:
+  - Esto es importante
+  - Considera las implicaciones
+  - Toma tu propia decisión
+
+features:
+  - aspect
+  - quality
+  - property

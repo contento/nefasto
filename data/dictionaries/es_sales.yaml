@@ -163,3 +163,13 @@ statements:
   - Acelera tu éxito
   - Domina tu mercado
   - Asegura tu futuro
+
+statements_es:
+  - Esto es importante
+  - Considera las implicaciones
+  - Toma tu propia decisión
+
+features:
+  - aspect
+  - quality
+  - property

@@ -136,3 +136,13 @@ statements:
   - El precedente establece
   - La moción es denegada
   - El veredicto se pronuncia
+
+statements_es:
+  - Esto es importante
+  - Considera las implicaciones
+  - Toma tu propia decisión
+
+features:
+  - aspect
+  - quality
+  - property

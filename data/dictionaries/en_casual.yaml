@@ -145,3 +145,13 @@ statements:
   - All good vibes
   - Having a blast
   - Best day ever
+
+statements_en:
+  - This is important
+  - Consider the implications
+  - Make your own decision
+
+features:
+  - aspect
+  - quality
+  - property

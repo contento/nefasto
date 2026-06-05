@@ -148,7 +148,7 @@ characters:
   - Reagan
   - Carter
 
-statements:
+statements_es:
   - La ley debe servir a todos por igual
   - La reforma requiere acciones audaces
   - La tradición proporciona estabilidad
@@ -161,3 +161,15 @@ statements:
   - La justicia no puede ser postergada
   - El cambio es inevitable
   - El liderazgo requiere visión
+
+features:
+  - poder
+  - autoridad
+  - influencia
+  - legitimidad
+  - justicia
+  - estabilidad
+  - reforma
+  - progreso
+  - democracia
+  - libertad

@@ -102,3 +102,13 @@ statements:
   - With every heartbeat
   - Like petals falling
   - In silence
+
+statements_en:
+  - This is important
+  - Consider the implications
+  - Make your own decision
+
+features:
+  - aspect
+  - quality
+  - property
