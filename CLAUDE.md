@@ -1,13 +1,13 @@
 # Prolog Discourse Generator - Instructions for Claude Code
 
 ## Project Overview
-A pure Prolog discourse/narrative generator without LLMs, reviving 1989 Turbo Prolog techniques with modern SWI-Prolog. Generates coherent narratives using DCG (Definite Clause Grammars), ontologies, and simple random selection.
+A pure Prolog discourse/narrative generator without LLMs, reviving 1989 Turbo Prolog techniques with modern SWI-Prolog. Generates coherent narratives using DCG (Definite Clause Grammars), profile-based word banks, and simple random selection.
 
 ## Core Values
 - **Pure Logic Only**: No neural networks, no LLMs, no external ML libraries
 - **Historical Awareness**: Note differences between Turbo Prolog (~1989) and modern SWI-Prolog
 - **Simplicity First**: Simple random generation, simple dictionaries, simple UI
-- **Coherence Over Complexity**: Ontologies ensure semantic consistency, not marketing
+- **Coherence Over Complexity**: Profile constraints ensure narrative consistency, not complexity
 - **Multilingual**: Support both English and Spanish from day one
 
 ## Architecture
@@ -18,21 +18,18 @@ src/
   main.pl               # Entry point, CLI arg parsing
   tui.pl                # Terminal UI (cross-platform ANSI)
   generator.pl          # DCG rules, phrase/3 narrative generation
-  ontology.pl           # Entity relationships, semantic constraints
   config.pl             # Config loading (JSON/YAML/TOML)
-  profiles.pl           # Discourse profiles (political, sales)
+  profiles.pl           # Discourse profile registry (12 profiles)
+  dict_loader.pl        # YAML dictionary loader
   random_utils.pl       # Random selection helpers, profile-aware
-  state.pl              # Entity tracking, anaphora, coherence
 
 data/
-  dict_en.pl            # English fallback lexicon/word banks
-  dict_es.pl            # Spanish fallback lexicon/word banks
-  narratives.pl         # Story templates, narrative structures
-  dictionaries/         # Profile-specific word bank data (YAML)
-    en_political.yaml   # English political discourse word banks
-    en_sales.yaml       # English sales discourse word banks
-    es_political.yaml   # Spanish political discourse word banks
-    es_sales.yaml       # Spanish sales discourse word banks
+  dictionaries/         # Profile-specific word banks (24 YAML files)
+    en_political.yaml   # English political discourse
+    es_political.yaml   # Spanish political discourse
+    en_academic.yaml    # English academic discourse
+    es_academic.yaml    # Spanish academic discourse
+    ... (12 profiles × 2 languages = 24 files)
 
 config/
   default.json      # JSON configuration template
@@ -48,29 +45,27 @@ docs/
 
 The generator supports **mutually exclusive discourse profiles** that change narrative voice, word choice, and style:
 
-- **political** (default): Argumentative, policy-focused, persuasive (senators, debates, reform)
-- **sales**: Action-oriented, benefit-focused, pitch-style (products, growth, transformation)
+**12 Implemented Profiles:**
+- political, sales, karen, academic, casual, legal, journalistic, poetic, technical, conspiracy, motivational, passive_aggressive
+
+Each profile available in English and Spanish.
 
 **Usage:**
 
 ```bash
-swipl -l src/main.pl -- --profile political
-swipl -l src/main.pl -- --profile sales
-```
-
-**Config file:**
-
-```json
-{ "profile": "sales" }
+swipl -l src/main.pl -- --profile political --lang en
+swipl -l src/main.pl -- --profile academic --lang es
+swipl -l src/main.pl -- --seed 42 --profile karen
 ```
 
 **Implementation:**
 
-- Profile system in `src/profiles.pl`
-- Dictionary loader in `src/dict_loader.pl` (loads YAML files at startup)
-- Profile-specific word banks in `data/dictionaries/` (YAML format)
-- `random_select_word/3` tries profile-specific word banks first, falls back to generic
-- Data/code separation: word banks are data in YAML, not Prolog code
+- Profile system in `src/profiles.pl` - registry of available profiles
+- Dictionary loader in `src/dict_loader.pl` - loads YAML files at startup
+- Profile-specific word banks in `data/dictionaries/` (24 YAML files)
+- `random_select_word/3` selects from current profile's word bank
+- Data/code separation: word banks are pure data in YAML, not Prolog code
+- No fallback: each profile must define all required word categories
 - Future: TODO for blending multiple profiles with weighted influence
 
 ### Key Design Decisions
@@ -78,18 +73,18 @@ swipl -l src/main.pl -- --profile sales
 1. **DCG over Manual Parsing**: Use phrase/3 and DCG rules exclusively for syntax
 2. **Dynamic Predicates for State**: Track entities, recent actions, locations with assert/retract
 3. **Profile-Aware Word Banks**: Profile-specific word banks with fallback to generic language
-4. **Ontology-First Coherence**: Ensure actions match entity types before generating
+4. **Profile-Based Coherence**: Each profile has consistent vocabulary and style
 5. **Cross-Platform TUI**: ANSI colors + simple text menus (no ncurses)
-6. **Config is Data**: JSON/YAML/TOML loading for reproducible experiments
+6. **Config is Data**: YAML-based dictionaries for reproducible experiments
 
 ## Implementation Guidelines
 
 ### When Adding Features
-1. Add to appropriate module (generator, ontology, state, config)
+1. Add to appropriate module (generator, profiles, dict_loader, config)
 2. Include Turbo Prolog (1989) compatibility notes in comments
 3. Highlight SWI-Prolog advantages in comments
-4. Update both EN and ES dictionaries if adding word types
-5. Test with both languages
+4. Update YAML profiles if adding word categories (all EN/ES pairs)
+5. Test with both languages and multiple profiles
 
 ### Code Style
 - Predicates: snake_case, descriptive names
@@ -134,9 +129,8 @@ swipl tests/run_tests.pl
 ```
 
 **Unit Tests** (in `tests/unit/`)
-- `random_utils_test.pl` - Random selection, weighted_random, pacing
-- `generator_test.pl` - DCG rules (space, copula, dialogue, description)
-- `state_test.pl` - Entity tracking, advance_line, action recording
+- `random_utils_test.pl` - Profile-aware word selection
+- `generator_test.pl` - DCG rules (story, dialogue, description)
 
 **Integration Tests** (in `tests/integration/`)
 - `narrative_generation_test.pl` - Full pipeline (EN/ES, all types)
@@ -237,18 +231,19 @@ swipl -l src/main.pl -- --lang es --seed 123 --config config/custom.yaml
 ## Current Limitations (Intentional)
 - No constraint solving (CLP) yet - keep it simple
 - No tabling/memoization - each generation is fresh
-- Word banks are small - add to them as needed
-- Narrative templates are basic - extend in narratives.pl
+- Word banks growing organically - 40-60 words per category per profile
+- Simple 3-part narrative structure (setup → complication → resolution)
 - Profiles are mutually exclusive - no blending yet
+- Spanish gender heuristic uses lookup table (not perfect but functional)
 
 ## Next Steps (See TODO.md)
-1. Expand word banks (150+ per category per language)
-2. Add more narrative templates (hero's journey, three-act structure)
-3. Implement proper config file parsing (currently stubs)
-4. Wire up unused features (anaphora, ontology constraints, narrative templates)
-5. Add coherence validation metrics
-6. Expand TUI with more options
-7. Profile blending: weighted influence of multiple profiles in one narrative
+1. Expand word banks (150+ per category per profile per language)
+2. Add more narrative structures (hero's journey, five-act, dialogue-focused)
+3. Implement full config file parsing (JSON/YAML/TOML beyond stubs)
+4. Add coherence validation metrics (grammar, repetition, flow)
+5. Expand TUI with history, favorites, export formats
+6. Profile blending: weighted influence of multiple profiles in one narrative
+7. Semantic ontologies: validate noun-verb combinations per profile
 
 ## Future Enhancements
 
